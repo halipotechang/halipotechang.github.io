@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>CSS BoxModel</title>
+    <link href="/2021/09/08/CSS%20BoxModel/"/>
+    <url>/2021/09/08/CSS%20BoxModel/</url>
+    
+    <content type="html"><![CDATA[<h3 id="CSS-BoxModel"><a href="#CSS-BoxModel" class="headerlink" title="CSS BoxModel"></a>CSS BoxModel</h3><br><p>CSS Box Model 盒模型是 CSS 的基礎，也是操控網頁非常重要的觀念。</p><br><p>主要由四個部分組成：</p><ul><li><p>Content ( 內容 )</p></li><li><p>Padding ( 內邊距 )</p></li><li><p>Border ( 邊框 )</p></li><li><p>Margin ( 外邊距 )</p></li></ul><p><img src="/2021/09/08/CSS%20BoxModel/boxmodel.png" alt=" "></p><h2 id="Margin-外邊距"><a href="#Margin-外邊距" class="headerlink" title="Margin (外邊距)"></a>Margin (外邊距)</h2><br><p>常見Margin屬性：</p><ul><li><p>margin-top:  (上外距)</p></li><li><p>margin-right: (右外距)</p></li><li><p>margin-bottom: (下外距)</p></li><li><p>margin-left: (左外距)</p></li><li><p>margin: </p></li></ul><blockquote><p>以上為Margin 常用屬性，作用為調整物件與頁面邊界之距離</p></blockquote><br><h2 id="Border-邊框"><a href="#Border-邊框" class="headerlink" title="Border (邊框)"></a>Border (邊框)</h2><br><p>常見Border屬性：</p><ul><li><p>border-style:  (邊框樣式)</p></li><li><p>border-width: (邊框寬度)</p></li><li><p>border-color (邊框色彩)</p></li></ul><p>border-style 各值顯示樣式：<br><br></p><p><img src="/2021/09/08/CSS%20BoxModel/borderstyles.png"></p><h2 id="Padding-內邊距"><a href="#Padding-內邊距" class="headerlink" title="Padding (內邊距)"></a>Padding (內邊距)</h2><br><p>常見Padding屬性：</p><ul><li><p>padding-top: (上邊距)</p></li><li><p>padding-right: (右邊距)</p></li><li><p>padding-bottom: (下邊距)</p></li><li><p>padding-left: (左邊距)</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>CSS 套用方式</title>
     <link href="/2021/09/08/CSS%E5%A5%97%E7%94%A8%E6%96%B9%E5%BC%8F/"/>
     <url>/2021/09/08/CSS%E5%A5%97%E7%94%A8%E6%96%B9%E5%BC%8F/</url>
