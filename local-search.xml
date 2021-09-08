@@ -20,9 +20,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -47,9 +47,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -74,9 +74,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -101,36 +101,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML語意標籤</title>
-    <link href="/2021/09/07/HTML%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML語意標籤"><a href="#HTML語意標籤" class="headerlink" title="HTML語意標籤"></a>HTML語意標籤</h1><br><blockquote><p>HTML5新標籤<br>最大的目的是讓搜尋引擎或是其他軟體工具，可以更清楚的了解網頁中每個區塊的設計目的。</p></blockquote><br><center><table><thead><tr><th align="center">標籤</th><th align="center">說明</th></tr></thead><tbody><tr><td align="center">article</td><td align="center">文字範圍</td></tr><tr><td align="center">aside</td><td align="center">側邊欄</td></tr><tr><td align="center">details</td><td align="center">可看見或隱藏的詳細資訊</td></tr><tr><td align="center">summary</td><td align="center">針對details定義一個可視的說明</td></tr><tr><td align="center">figcaption</td><td align="center">獨立內容區段 通常figure一起使用</td></tr><tr><td align="center">figure</td><td align="center">獨立內容區段 針對影像內容進行說明</td></tr><tr><td align="center">footer</td><td align="center">頁面的下方區段</td></tr><tr><td align="center">header</td><td align="center">頁面的上方區段</td></tr><tr><td align="center">nav</td><td align="center">Menu</td></tr><tr><td align="center">time</td><td align="center">時間</td></tr></tbody></table><center><br><p><img src="/2021/09/07/HTML%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/websideLayout.gif" alt=" "></p></center></center>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>HTML</tag>
-      
-      <tag>前端開發</tag>
       
     </tags>
     
@@ -155,9 +128,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -182,9 +155,36 @@
     
     <tags>
       
+      <tag>前端開發</tag>
+      
       <tag>HTML</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML語意標籤</title>
+    <link href="/2021/09/07/HTML%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML語意標籤"><a href="#HTML語意標籤" class="headerlink" title="HTML語意標籤"></a>HTML語意標籤</h1><br><blockquote><p>HTML5新標籤<br>最大的目的是讓搜尋引擎或是其他軟體工具，可以更清楚的了解網頁中每個區塊的設計目的。</p></blockquote><br><center><table><thead><tr><th align="center">標籤</th><th align="center">說明</th></tr></thead><tbody><tr><td align="center">article</td><td align="center">文字範圍</td></tr><tr><td align="center">aside</td><td align="center">側邊欄</td></tr><tr><td align="center">details</td><td align="center">可看見或隱藏的詳細資訊</td></tr><tr><td align="center">summary</td><td align="center">針對details定義一個可視的說明</td></tr><tr><td align="center">figcaption</td><td align="center">獨立內容區段 通常figure一起使用</td></tr><tr><td align="center">figure</td><td align="center">獨立內容區段 針對影像內容進行說明</td></tr><tr><td align="center">footer</td><td align="center">頁面的下方區段</td></tr><tr><td align="center">header</td><td align="center">頁面的上方區段</td></tr><tr><td align="center">nav</td><td align="center">Menu</td></tr><tr><td align="center">time</td><td align="center">時間</td></tr></tbody></table><center><br><p><img src="/2021/09/07/HTML%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/websideLayout.gif" alt=" "></p></center></center>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -209,9 +209,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
