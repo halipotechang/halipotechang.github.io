@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>CSS 套用方式 - Li&#39;s Blog</title>
+  <title>資料庫概論 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -151,7 +151,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="CSS 套用方式">
+            <span class="h2" id="subtitle" title="資料庫概論">
               
             </span>
 
@@ -161,8 +161,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-08 18:03" pubdate>
-        2021年9月8日 晚上
+      <time datetime="2021-09-09 10:54" pubdate>
+        2021年9月9日 上午
       </time>
     </span>
   
@@ -173,7 +173,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      310 字
+      342 字
     </span>
   
 
@@ -183,7 +183,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      3
        分钟
     </span>
   
@@ -213,47 +213,112 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">CSS 套用方式</h1>
+            <h1 style="display: none">資料庫概論</h1>
             
             <div class="markdown-body">
-              <h1 id="CSS-套用方式"><a href="#CSS-套用方式" class="headerlink" title="CSS 套用方式"></a>CSS 套用方式</h1><h2 id="行內套用-Inline"><a href="#行內套用-Inline" class="headerlink" title="行內套用 (Inline)"></a>行內套用 (Inline)</h2><br>
+              <h3 id="資料庫概論"><a href="#資料庫概論" class="headerlink" title="資料庫概論"></a>資料庫概論</h3><br>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red;&quot;</span>&gt;</span>網頁設計<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>將style直接寫在HTML標籤內套用ＣＳＳ</p>
-</blockquote>
-<br>
-
-<h2 id="頁面套用-Embed"><a href="#頁面套用-Embed" class="headerlink" title="頁面套用 (Embed)"></a>頁面套用 (Embed)</h2><br>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">        <span class="hljs-selector-tag">h2</span> &#123;</span><br><span class="css">            <span class="hljs-attribute">color</span>:<span class="hljs-number">#090B4E</span>;</span><br><span class="css">        &#125;</span><br><span class="css">        <span class="hljs-selector-tag">p</span> &#123;</span><br><span class="css">            <span class="hljs-attribute">color</span>:<span class="hljs-number">#0f0</span>;</span><br><span class="css">        &#125;</span><br><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>將style寫在同頁面head區塊中套用ＣＳＳ</p>
-</blockquote>
-<br>
-
-<h2 id="外部連接套用-External-Link"><a href="#外部連接套用-External-Link" class="headerlink" title="外部連接套用 (External Link)"></a>外部連接套用 (External Link)</h2><br>
-
+<h2 id="資料庫演進"><a href="#資料庫演進" class="headerlink" title="資料庫演進"></a>資料庫演進</h2><p>資料庫的演進：人工作業 –&gt; 循序儲存 –&gt; 檔案系統 –&gt; 資料庫系統</p>
 <ul>
-<li>index.css<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;<span class="hljs-comment">/*頁面*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#339</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h2</span>&#123;<span class="hljs-comment">/*標題2*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-comment">/*背景文字色彩*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#660</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h3</span>&#123;<span class="hljs-comment">/*標題3*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#cc6</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">p</span>&#123;<span class="hljs-comment">/*段落*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#33f</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
-<li>index.html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;index.css&quot;</span>&gt;</span> <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>使用link標籤連結至外部ＣＳＳ檔案</p>
+<li>人工作業 : 紙本</li>
+<li>循序儲存 : 磁帶</li>
+<li>檔案系統 : 檔案</li>
+<li>資料庫系統 : 硬碟(配合BDMS做管理)</li>
+</ul>
+<br>
+
+<h2 id="DBSM-類型"><a href="#DBSM-類型" class="headerlink" title="DBSM 類型"></a>DBSM 類型</h2><ul>
+<li>階層式(Hierarchical model) </li>
+<li>網狀式(Network model)</li>
+<li>關聯式(Relational model) </li>
+<li>文件式(Document model)<blockquote>
+<p>常見的系統有： Oracle Database 、 MySQL、 MS. SQL Server、 PostgreSQL</p>
 </blockquote>
 </li>
 </ul>
 <br>
 
-<h2 id="匯入套用-Import"><a href="#匯入套用-Import" class="headerlink" title="匯入套用 (Import)"></a>匯入套用 (Import)</h2><br>
+<h2 id="DBSM-組成"><a href="#DBSM-組成" class="headerlink" title="DBSM 組成"></a>DBSM 組成</h2><ul>
+<li>資料庫(DataBase)</li>
+<li>資料庫管理系統(DataBaseManagementSystem)</li>
+</ul>
+<br>
+
+<h2 id="DB-常用物件"><a href="#DB-常用物件" class="headerlink" title="DB 常用物件"></a>DB 常用物件</h2><br>
 
 <ul>
-<li>index.css<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;<span class="hljs-comment">/*頁面*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#339</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h2</span>&#123;<span class="hljs-comment">/*標題2*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-comment">/*背景文字色彩*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#660</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h3</span>&#123;<span class="hljs-comment">/*標題3*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#cc6</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">p</span>&#123;<span class="hljs-comment">/*段落*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#33f</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
-<li>index.html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">        <span class="hljs-keyword">@import</span> url(index.css);</span><br><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<li>資料庫伺服器(DB Server)<br></li>
+</ul>
 <blockquote>
-<p>使用＠import語法連結外部ＣＳＳ檔案</p>
+<p>電腦安裝且開啟了DBMS，即為一資料庫伺服器。</p>
+</blockquote>
+<br>
+
+<ul>
+<li>資料庫管理系統(DBMS)</li>
+</ul>
+<blockquote>
+<p>管理資料庫的系統，安裝在資料庫伺服器上 </p>
+</blockquote>
+<br>
+
+<ul>
+<li> 資料庫(DB)</li>
+</ul>
+<blockquote>
+<p>此處指的是在DBMS裡的單位。在一DBMS內可建立多個資料庫</p>
+</blockquote>
+<br>
+
+<ul>
+<li>綱要(Schema)</li>
+</ul>
+<blockquote>
+<p>資料庫綱要，亦可說是資料庫的藍圖，描述一資料庫由哪些物件組成</p>
+</blockquote>
+<br>
+
+<ul>
+<li>資料表(Table)<blockquote>
+<p>以欄與列方式儲存資料，所有資料皆儲存在資料表</p>
 </blockquote>
 </li>
 </ul>
+<br>
+
+<ul>
+<li>欄位(Column)<blockquote>
+<p>資料表的組成要素之一，需設定名稱、資料型態、⻑度</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<ul>
+<li>資料列(Row/Record)<blockquote>
+<p>資料表的組成要素之一，表示資料表中的一筆紀錄</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<ul>
+<li>值(Cell)<blockquote>
+<p>資料表中，某資料列的某欄位之值</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<ul>
+<li>檢視表(View)<blockquote>
+<p>由一select敘述描述出，呈現可視資料表</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<p><img src="/2021/09/09/%E8%B3%87%E6%96%99%E5%BA%AB%E6%A6%82%E8%AB%96/DB.png" srcset="/img/loading.gif" lazyload alt=" "></p>
 
             </div>
             <hr>
@@ -263,7 +328,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/CSS/">CSS</a>
+                      <a class="hover-with-bg" href="/categories/SQL/">SQL</a>
                     
                   </div>
                 
@@ -271,9 +336,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
+                      <a class="hover-with-bg" href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a>
                     
-                      <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
                   </div>
                 
@@ -290,18 +355,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/08/CSS%20BoxModel/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CSS BoxModel</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/07/%20HTML%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/">
-                        <span class="hidden-mobile">HTML文字標籤</span>
+                      <a href="/2021/09/08/CSS%20BoxModel/">
+                        <span class="hidden-mobile">CSS BoxModel</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
