@@ -11,6 +11,14 @@
     <content type="html"><![CDATA[<h1 id="MySQL-Select子句"><a href="#MySQL-Select子句" class="headerlink" title="MySQL Select子句"></a>MySQL Select子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><ul><li>用以查詢Table內的資料</li><li>僅查詢，不會改變資料</li></ul><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> &#123;<span class="hljs-keyword">distinct</span>&#125;<br>    欄位名<span class="hljs-number">1</span>, .., 欄位名N<br><span class="hljs-keyword">from</span>    <br>    表格名;<br></code></pre></td></tr></table></figure><blockquote><p>若 select 子句後面加上 distinct 及顯示不重複資料</p></blockquote><br><h3 id="字串串接"><a href="#字串串接" class="headerlink" title="字串串接"></a>字串串接</h3><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    CONCAT( 字串<span class="hljs-number">1</span>, 字串<span class="hljs-number">2</span>, 字串<span class="hljs-number">3</span>, ... )<br><span class="hljs-keyword">from</span>    <br>    表格名;<br></code></pre></td></tr></table></figure><blockquote><p>將欄位內的值 或 字面常數做串接</p></blockquote><br><h3 id="case運算式"><a href="#case運算式" class="headerlink" title="case運算式"></a>case運算式</h3><br><ul><li>列舉式(Simple Case)</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    <span class="hljs-keyword">case</span> 欄位名 <span class="hljs-operator">|</span> 運算式 <span class="hljs-operator">|</span> 字面常數 <br>        <span class="hljs-keyword">when</span> 列舉值<span class="hljs-number">1</span> <span class="hljs-keyword">then</span> 結果<span class="hljs-number">1</span><br>        ..<br>        <span class="hljs-keyword">when</span> 列舉值N <span class="hljs-keyword">then</span> 結果N<br>        &#123;<span class="hljs-keyword">else</span> 結果&#125;<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">from</span>   表格名<br></code></pre></td></tr></table></figure><br><ul><li>條件式(Searched Case)</li></ul><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    <span class="hljs-keyword">case</span><br>        <span class="hljs-keyword">when</span> 條件<span class="hljs-number">1</span> <span class="hljs-keyword">then</span> 結果<span class="hljs-number">1</span> <br>        ..<br>        <span class="hljs-keyword">when</span> 條件N <span class="hljs-keyword">then</span> 結果N<br>        &#123;<span class="hljs-keyword">else</span> 結果&#125;<br>    <span class="hljs-keyword">end</span>  <span class="hljs-keyword">as</span> &#123;一般會加上表格名&#125;<br><span class="hljs-keyword">from</span>   表格名<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>SQL</category>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -31,6 +39,12 @@
     
     <content type="html"><![CDATA[<h1 id="SQL資料型態"><a href="#SQL資料型態" class="headerlink" title="SQL資料型態"></a>SQL資料型態</h1><h2 id="整數"><a href="#整數" class="headerlink" title="整數"></a>整數</h2><br><ul><li>INT<blockquote><p>4bytes 整數</p></blockquote></li></ul><br><ul><li>BIGINT <blockquote><p>8bytes 整數</p></blockquote></li></ul><br><ul><li>BIT(1)<blockquote><p>Boolean</p></blockquote></li></ul><br><h2 id="浮點數"><a href="#浮點數" class="headerlink" title="浮點數"></a>浮點數</h2><br><ul><li>DECIMAL[(M,D)]<blockquote><p>M : 總長度 D : 小數長度</p></blockquote></li></ul><blockquote><p>MySQL中，DECIMAL等同NUMERIC</p></blockquote><br><h2 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h2><br><ul><li><p>CHAR(M)</p><blockquote><p>固定長度的字串</p></blockquote></li><li><p>VARCHAR(N)</p><blockquote><p>長度可變的字串</p></blockquote></li><li><p>TEXT</p><blockquote><p>很長的字串，如文本</p></blockquote></li></ul><br><h2 id="日期時間"><a href="#日期時間" class="headerlink" title="日期時間"></a>日期時間</h2><br><ul><li><p>DATETIME | 日期和時間</p></li><li><p>TIMESTAMP | 時間戳記</p></li><li><p>DATE | 日期</p></li><li><p>TIME | 時間</p></li><li><p>YEAR | 年度</p></li></ul>]]></content>
     
+    
+    <categories>
+      
+      <category>SQL</category>
+      
+    </categories>
     
     
     <tags>
@@ -154,33 +168,6 @@
   
   
   <entry>
-    <title>HTML 圖片、多媒體標籤</title>
-    <link href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-圖片、多媒體標籤"><a href="#HTML-圖片、多媒體標籤" class="headerlink" title="HTML 圖片、多媒體標籤"></a>HTML 圖片、多媒體標籤</h1><h2 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h2><br><ul><li>&lt;img&gt; 顯示圖片標籤</li></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>src=””  為圖片來源 </p></blockquote><blockquote><p>alt=””   為替代文字</p></blockquote><h2 id="多媒體"><a href="#多媒體" class="headerlink" title="多媒體"></a>多媒體</h2><br><ul><li><p>&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;object&gt; 多媒體資料以object方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>data=”” 外部資源url</p></blockquote></li></ul><br><ul><li><p>&lt;video&gt; 將影片資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;audio&gt; 將聲音資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>前端開發</tag>
-      
-      <tag>HTML</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>HTML 文字標籤</title>
     <link href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/"/>
     <url>/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/</url>
@@ -267,6 +254,33 @@
     <url>/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/</url>
     
     <content type="html"><![CDATA[<h1 id="HTML語意標籤"><a href="#HTML語意標籤" class="headerlink" title="HTML語意標籤"></a>HTML語意標籤</h1><br><blockquote><p>HTML5新標籤<br>最大的目的是讓搜尋引擎或是其他軟體工具，可以更清楚的了解網頁中每個區塊的設計目的。</p></blockquote><br><ul><li>article | 文字範圍 </li><li>aside | 側邊欄 </li><li>details | 可看見或隱藏的詳細資訊 </li><li>summary | 針對details定義一個可視的說明</li><li>figcaption | 獨立內容區段 通常figure一起使用 </li><li>figure | 獨立內容區段 針對影像內容進行說明</li><li>footer | 頁面的下方區段 </li><li>header | 頁面的上方區段 </li><li>nav | Menu</li><li>time | 時間 </li></ul><br><p><img src="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/websideLayout.gif" alt=" "></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 圖片、多媒體標籤</title>
+    <link href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-圖片、多媒體標籤"><a href="#HTML-圖片、多媒體標籤" class="headerlink" title="HTML 圖片、多媒體標籤"></a>HTML 圖片、多媒體標籤</h1><h2 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h2><br><ul><li>&lt;img&gt; 顯示圖片標籤</li></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>src=””  為圖片來源 </p></blockquote><blockquote><p>alt=””   為替代文字</p></blockquote><h2 id="多媒體"><a href="#多媒體" class="headerlink" title="多媒體"></a>多媒體</h2><br><ul><li><p>&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;object&gt; 多媒體資料以object方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>data=”” 外部資源url</p></blockquote></li></ul><br><ul><li><p>&lt;video&gt; 將影片資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;audio&gt; 將聲音資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
     
     
     <categories>
