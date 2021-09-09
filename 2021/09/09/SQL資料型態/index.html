@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>HTML表單標籤 - Li&#39;s Blog</title>
+  <title>SQL資料型態 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -151,7 +151,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="HTML表單標籤">
+            <span class="h2" id="subtitle" title="SQL資料型態">
               
             </span>
 
@@ -161,8 +161,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-07 20:00" pubdate>
-        2021年9月7日 晚上
+      <time datetime="2021-09-09 19:10" pubdate>
+        2021年9月9日 晚上
       </time>
     </span>
   
@@ -173,7 +173,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      248 字
+      91 字
     </span>
   
 
@@ -183,7 +183,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      1
        分钟
     </span>
   
@@ -213,59 +213,98 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">HTML表單標籤</h1>
+            <h1 style="display: none">SQL資料型態</h1>
             
             <div class="markdown-body">
-              <h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br>
+              <h1 id="SQL資料型態"><a href="#SQL資料型態" class="headerlink" title="SQL資料型態"></a>SQL資料型態</h1><br>
+
+<h2 id="整數"><a href="#整數" class="headerlink" title="整數"></a>整數</h2><br>
 
 <ul>
-<li><p>&lt;table&gt;  表單的範圍</p>
+<li>INT<blockquote>
+<p>4bytes 整數</p>
+</blockquote>
 </li>
-<li><p>&lt;fieldset&gt;  表單欄位的所有集結區域</p>
-</li>
-<li><p>&lt;legend&gt;  表單的標題</p>
-</li>
-<li><p>&lt;input&gt;  表單單行文字欄位</p>
-</li>
-<li><p>&lt;textarea&gt; 表單多行文字欄位</p>
-</li>
-<li><p>&lt;button&gt;  表單按鈕</p>
-<br></li>
 </ul>
-<p>範例：<br><br></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>留言板<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span>留言主題:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言內容&quot;</span>&gt;</span>留言內容:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言內容&quot;</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;30&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span>電子郵件:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>送出<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<br>
 
-<br> 
+<ul>
+<li>BIGINT <blockquote>
+<p>8bytes 整數</p>
+</blockquote>
+</li>
+</ul>
+<br>
 
-<p>顯示：<br><br></p>
-<form action>
-    <fieldset>
-        <legend>留言板</legend>
-        <p><label for="留言主題">留言主題:</label><input type="text" id="留言主題"></p>
-        <p><label for="留言內容">留言內容:</label><textarea name id="留言內容" cols="30" rows="10"></textarea></p>
-        <p><label for="電子郵件">電子郵件:</label><input type="text" id="電子郵件"></p>
-        <p><button type>送出</button></p>
-    </fieldset>
-</form>
+<ul>
+<li>BIT(1)<blockquote>
+<p>Boolean</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<h2 id="浮點數"><a href="#浮點數" class="headerlink" title="浮點數"></a>浮點數</h2><br>
+
+<ul>
+<li>DECIMAL[(M,D)]<blockquote>
+<p>M : 總長度 D : 小數長度</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>MySQL中，DECIMAL等同NUMERIC</p>
+</blockquote>
+<br>
+
+<h2 id="字串"><a href="#字串" class="headerlink" title="字串"></a>字串</h2><br>
+
+<ul>
+<li><p>CHAR(M)</p>
+<blockquote>
+<p>固定長度的字串</p>
+</blockquote>
+</li>
+<li><p>VARCHAR(N)</p>
+<blockquote>
+<p>長度可變的字串</p>
+</blockquote>
+</li>
+<li><p>TEXT</p>
+<blockquote>
+<p>很長的字串，如文本</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<h2 id="日期時間"><a href="#日期時間" class="headerlink" title="日期時間"></a>日期時間</h2><br>
+
+<ul>
+<li><p>DATETIME | 日期和時間</p>
+</li>
+<li><p>TIMESTAMP | 時間戳記</p>
+</li>
+<li><p>DATE | 日期</p>
+</li>
+<li><p>TIME | 時間</p>
+</li>
+<li><p>YEAR | 年度</p>
+</li>
+</ul>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/HTML/">HTML</a>
-                    
-                  </div>
-                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
+                      <a class="hover-with-bg" href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a>
                     
-                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
                   </div>
                 
@@ -282,18 +321,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/08/CSS%E5%A5%97%E7%94%A8%E6%96%B9%E5%BC%8F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CSS 套用方式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/07/HTML%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/">
-                        <span class="hidden-mobile">HTML圖片、多媒體標籤</span>
+                      <a href="/2021/09/09/%E8%B3%87%E6%96%99%E5%BA%AB%E6%A6%82%E8%AB%96/">
+                        <span class="hidden-mobile">資料庫概論</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
