@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>HTML其他標籤 - Li&#39;s Blog</title>
+  <title>MySQL Select子句 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -151,7 +151,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="HTML其他標籤">
+            <span class="h2" id="subtitle" title="MySQL Select子句">
               
             </span>
 
@@ -161,8 +161,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-07 20:00" pubdate>
-        2021年9月7日 晚上
+      <time datetime="2021-09-09 20:18" pubdate>
+        2021年9月9日 晚上
       </time>
     </span>
   
@@ -173,7 +173,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      71 字
+      183 字
     </span>
   
 
@@ -183,7 +183,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -213,49 +213,57 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">HTML其他標籤</h1>
+            <h1 style="display: none">MySQL Select子句</h1>
             
             <div class="markdown-body">
-              <h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br>
+              <h1 id="MySQL-Select子句"><a href="#MySQL-Select子句" class="headerlink" title="MySQL Select子句"></a>MySQL Select子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br>
 
 <ul>
-<li><p>&lt;div&gt; 頁面的區域、範圍</p>
-</li>
-<li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p>
-</li>
+<li>用以查詢Table內的資料</li>
+<li>僅查詢，不會改變資料</li>
 </ul>
-<h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br>
+<br>
+
+<h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> &#123;<span class="hljs-keyword">distinct</span>&#125;<br>    欄位名<span class="hljs-number">1</span>, .., 欄位名N<br><span class="hljs-keyword">from</span>    <br>    表格名;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>若 select 子句後面加上 distinct 及顯示不重複資料</p>
+</blockquote>
+<br>
+
+<h3 id="字串串接"><a href="#字串串接" class="headerlink" title="字串串接"></a>字串串接</h3><br>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    CONCAT( 字串<span class="hljs-number">1</span>, 字串<span class="hljs-number">2</span>, 字串<span class="hljs-number">3</span>, ... )<br><span class="hljs-keyword">from</span>    <br>    表格名;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>將欄位內的值 或 字面常數做串接</p>
+</blockquote>
+<br>
+
+<h3 id="case運算式"><a href="#case運算式" class="headerlink" title="case運算式"></a>case運算式</h3><br>
 
 <ul>
-<li><p>&lt;hr&gt; 水平線</p>
-</li>
-<li><p>&lt;br&gt; 換行</p>
-</li>
-<li><p>&lt;span&gt; 文字行中的子項目</p>
-</li>
-<li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p>
-</li>
+<li>列舉式(Simple Case)</li>
 </ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    <span class="hljs-keyword">case</span> 欄位名 <span class="hljs-operator">|</span> 運算式 <span class="hljs-operator">|</span> 字面常數 <br>        <span class="hljs-keyword">when</span> 列舉值<span class="hljs-number">1</span> <span class="hljs-keyword">then</span> 結果<span class="hljs-number">1</span><br>        ..<br>        <span class="hljs-keyword">when</span> 列舉值N <span class="hljs-keyword">then</span> 結果N<br>        &#123;<span class="hljs-keyword">else</span> 結果&#125;<br>    <span class="hljs-keyword">end</span><br><span class="hljs-keyword">from</span>   表格名<br></code></pre></td></tr></table></figure>
+<br>
 
+<ul>
+<li>條件式(Searched Case)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    <span class="hljs-keyword">case</span><br>        <span class="hljs-keyword">when</span> 條件<span class="hljs-number">1</span> <span class="hljs-keyword">then</span> 結果<span class="hljs-number">1</span> <br>        ..<br>        <span class="hljs-keyword">when</span> 條件N <span class="hljs-keyword">then</span> 結果N<br>        &#123;<span class="hljs-keyword">else</span> 結果&#125;<br>    <span class="hljs-keyword">end</span>  <span class="hljs-keyword">as</span> &#123;一般會加上表格名&#125;<br><span class="hljs-keyword">from</span>   表格名<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/HTML/">HTML</a>
-                    
-                  </div>
-                
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
-                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
                     
                   </div>
                 
@@ -272,18 +280,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/08/CSS%E5%A5%97%E7%94%A8%E6%96%B9%E5%BC%8F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CSS 套用方式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/07/HTML%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/">
-                        <span class="hidden-mobile">HTML圖片、多媒體標籤</span>
+                      <a href="/2021/09/09/SQL%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B/">
+                        <span class="hidden-mobile">SQL資料型態</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
