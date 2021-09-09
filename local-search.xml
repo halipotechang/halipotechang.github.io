@@ -13,8 +13,6 @@
     
     <categories>
       
-      <category>SQL</category>
-      
       <category>MySQL</category>
       
     </categories>
@@ -103,9 +101,9 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
       
     </tags>
     
@@ -130,7 +128,34 @@
     
     <tags>
       
+      <tag>前端開發</tag>
+      
       <tag>CSS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 文字標籤</title>
+    <link href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-文字標籤"><a href="#HTML-文字標籤" class="headerlink" title="HTML 文字標籤"></a>HTML 文字標籤</h1><h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字標題，數字越大表示呈現的標題越大 </p></blockquote><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字段落</p></blockquote><h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><br><ul><li>無序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul><br><ul><li>有序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>以清單方式呈現，<strong>&lt;li&gt;</strong> 為清單項目</p></blockquote></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML</tag>
       
       <tag>前端開發</tag>
       
@@ -157,117 +182,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 文字標籤</title>
-    <link href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-文字標籤"><a href="#HTML-文字標籤" class="headerlink" title="HTML 文字標籤"></a>HTML 文字標籤</h1><h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字標題，數字越大表示呈現的標題越大 </p></blockquote><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字段落</p></blockquote><h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><br><ul><li>無序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul><br><ul><li>有序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>以清單方式呈現，<strong>&lt;li&gt;</strong> 為清單項目</p></blockquote></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>前端開發</tag>
-      
-      <tag>HTML</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 表格標籤</title>
-    <link href="/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  主要呈現表格 範圍</p></li><li><p>&lt;tr&gt;  主要呈現表格中的 列</p></li><li><p>&lt;td&gt;  主要呈現表格中的 儲存格</p></li><li><p>&lt;th&gt;  主要呈現表格中的表格 標題</p></li></ul><br><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;001&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>序號<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>部門<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>職稱<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>001<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>joh<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>RD <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>專員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>002<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>mar<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>SR <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>主任<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>003<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Cathy<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>HR<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>004<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Rome<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>border=” “ 為表格邊框的大小</p></blockquote><br>   <p>顯示：<br><br></p><table>        <tr>            <th>序號</th>            <th>姓名</th>            <th>部門</th>            <th>職稱</th>        </tr>        <tr>            <td>001</td>            <td>joh</td>             <td>RD </td>            <td>專員</td>        </tr>        <tr>            <td>002</td>             <td>mar</td>            <td>SR </td>            <td>主任</td>        </tr>            <tr>            <td>003</td>            <td>Cathy</td>            <td>HR</td>            <td>經理</td>        </tr>        <tr>            <td>004</td>            <td>Rome</td>            <td>PM</td>            <td>經理</td>        </tr></table>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>前端開發</tag>
-      
-      <tag>HTML</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 表單標籤</title>
-    <link href="/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  表單的範圍</p></li><li><p>&lt;fieldset&gt;  表單欄位的所有集結區域</p></li><li><p>&lt;legend&gt;  表單的標題</p></li><li><p>&lt;input&gt;  表單單行文字欄位</p></li><li><p>&lt;textarea&gt; 表單多行文字欄位</p></li><li><p>&lt;button&gt;  表單按鈕</p><br></li></ul><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>留言板<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span>留言主題:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言內容&quot;</span>&gt;</span>留言內容:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言內容&quot;</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;30&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span>電子郵件:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>送出<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure><br> <p>顯示：<br><br></p><form action>    <fieldset>        <legend>留言板</legend>        <p><label for="留言主題">留言主題:</label><input type="text" id="留言主題"></p>        <p><label for="留言內容">留言內容:</label><textarea name id="留言內容" cols="30" rows="10"></textarea></p>        <p><label for="電子郵件">電子郵件:</label><input type="text" id="電子郵件"></p>        <p><button type>送出</button></p>    </fieldset></form>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>前端開發</tag>
-      
-      <tag>HTML</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 語意標籤</title>
-    <link href="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML語意標籤"><a href="#HTML語意標籤" class="headerlink" title="HTML語意標籤"></a>HTML語意標籤</h1><br><blockquote><p>HTML5新標籤<br>最大的目的是讓搜尋引擎或是其他軟體工具，可以更清楚的了解網頁中每個區塊的設計目的。</p></blockquote><br><ul><li>article | 文字範圍 </li><li>aside | 側邊欄 </li><li>details | 可看見或隱藏的詳細資訊 </li><li>summary | 針對details定義一個可視的說明</li><li>figcaption | 獨立內容區段 通常figure一起使用 </li><li>figure | 獨立內容區段 針對影像內容進行說明</li><li>footer | 頁面的下方區段 </li><li>header | 頁面的上方區段 </li><li>nav | Menu</li><li>time | 時間 </li></ul><br><p><img src="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/websideLayout.gif" alt=" "></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>前端開發</tag>
-      
-      <tag>HTML</tag>
       
     </tags>
     
@@ -292,9 +209,90 @@
     
     <tags>
       
+      <tag>HTML</tag>
+      
       <tag>前端開發</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 表格標籤</title>
+    <link href="/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  主要呈現表格 範圍</p></li><li><p>&lt;tr&gt;  主要呈現表格中的 列</p></li><li><p>&lt;td&gt;  主要呈現表格中的 儲存格</p></li><li><p>&lt;th&gt;  主要呈現表格中的表格 標題</p></li></ul><br><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;001&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>序號<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>部門<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>職稱<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>001<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>joh<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>RD <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>專員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>002<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>mar<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>SR <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>主任<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>003<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Cathy<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>HR<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>004<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Rome<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>border=” “ 為表格邊框的大小</p></blockquote><br>   <p>顯示：<br><br></p><table>        <tr>            <th>序號</th>            <th>姓名</th>            <th>部門</th>            <th>職稱</th>        </tr>        <tr>            <td>001</td>            <td>joh</td>             <td>RD </td>            <td>專員</td>        </tr>        <tr>            <td>002</td>             <td>mar</td>            <td>SR </td>            <td>主任</td>        </tr>            <tr>            <td>003</td>            <td>Cathy</td>            <td>HR</td>            <td>經理</td>        </tr>        <tr>            <td>004</td>            <td>Rome</td>            <td>PM</td>            <td>經理</td>        </tr></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 表單標籤</title>
+    <link href="/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  表單的範圍</p></li><li><p>&lt;fieldset&gt;  表單欄位的所有集結區域</p></li><li><p>&lt;legend&gt;  表單的標題</p></li><li><p>&lt;input&gt;  表單單行文字欄位</p></li><li><p>&lt;textarea&gt; 表單多行文字欄位</p></li><li><p>&lt;button&gt;  表單按鈕</p><br></li></ul><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>留言板<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span>留言主題:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言內容&quot;</span>&gt;</span>留言內容:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言內容&quot;</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;30&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span>電子郵件:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>送出<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure><br> <p>顯示：<br><br></p><form action>    <fieldset>        <legend>留言板</legend>        <p><label for="留言主題">留言主題:</label><input type="text" id="留言主題"></p>        <p><label for="留言內容">留言內容:</label><textarea name id="留言內容" cols="30" rows="10"></textarea></p>        <p><label for="電子郵件">電子郵件:</label><input type="text" id="電子郵件"></p>        <p><button type>送出</button></p>    </fieldset></form>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 語意標籤</title>
+    <link href="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML語意標籤"><a href="#HTML語意標籤" class="headerlink" title="HTML語意標籤"></a>HTML語意標籤</h1><br><blockquote><p>HTML5新標籤<br>最大的目的是讓搜尋引擎或是其他軟體工具，可以更清楚的了解網頁中每個區塊的設計目的。</p></blockquote><br><ul><li>article | 文字範圍 </li><li>aside | 側邊欄 </li><li>details | 可看見或隱藏的詳細資訊 </li><li>summary | 針對details定義一個可視的說明</li><li>figcaption | 獨立內容區段 通常figure一起使用 </li><li>figure | 獨立內容區段 針對影像內容進行說明</li><li>footer | 頁面的下方區段 </li><li>header | 頁面的上方區段 </li><li>nav | Menu</li><li>time | 時間 </li></ul><br><p><img src="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/websideLayout.gif" alt=" "></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
