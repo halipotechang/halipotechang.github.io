@@ -35,7 +35,7 @@
     <link href="/2021/09/10/MySQL%20Where%E5%AD%90%E5%8F%A5/"/>
     <url>/2021/09/10/MySQL%20Where%E5%AD%90%E5%8F%A5/</url>
     
-    <content type="html"><![CDATA[<h1 id="MySQL-Where子句"><a href="#MySQL-Where子句" class="headerlink" title="MySQL Where子句"></a>MySQL Where子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於條件判斷，過濾資料</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>..<br><span class="hljs-keyword">from</span> <br>    表格名 <br><span class="hljs-keyword">where</span> <br>    條件<br></code></pre></td></tr></table></figure><br><h3 id="比較運算子"><a href="#比較運算子" class="headerlink" title="比較運算子"></a>比較運算子</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center">=</td><td align="center">等於</td></tr><tr><td align="center"></td><td align="center">&gt;</td></tr><tr><td align="center"></td><td align="center">&gt;=</td></tr><tr><td align="center"></td><td align="center">&lt;</td></tr><tr><td align="center"></td><td align="center">&lt;=</td></tr><tr><td align="center"></td><td align="center">!=</td></tr></tbody></table><br><h3 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center"></td><td align="center">and</td></tr><tr><td align="center"></td><td align="center">or</td></tr><tr><td align="center"></td><td align="center">not</td></tr></tbody></table><br><h3 id="SQL-特定運算子"><a href="#SQL-特定運算子" class="headerlink" title="SQL 特定運算子"></a>SQL 特定運算子</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center"></td><td align="center">between 值1 and 值2</td></tr><tr><td align="center"></td><td align="center">in(值1, .., 值N)</td></tr><tr><td align="center"></td><td align="center">like</td></tr><tr><td align="center"></td><td align="center">is null</td></tr></tbody></table><br><h3 id="Like-模糊比對"><a href="#Like-模糊比對" class="headerlink" title="Like 模糊比對"></a>Like 模糊比對</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center"></td><td align="center">%</td></tr><tr><td align="center"></td><td align="center">_</td></tr><tr><td align="center"></td><td align="center">escape</td></tr></tbody></table><br><p>範例：</p><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs SQL">ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%w%&#x27;</span>→ 含有w <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;w%&#x27;</span> → w開頭 <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%w&#x27;</span> → w結尾<br><br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;_w_&#x27;</span> → 第<span class="hljs-number">2</span>個字元為w，且ENAME長度為<span class="hljs-number">3</span> <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;_w&#x27;</span> → 第<span class="hljs-number">2</span>個字元為w，且ENAME長度為<span class="hljs-number">2</span> <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;w_l%&#x27;</span> → w開頭，第<span class="hljs-number">3</span>字元為l<br><br>TEXT <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;100/%%&#x27;</span> <span class="hljs-keyword">escape</span> <span class="hljs-string">&#x27;/&#x27;</span> → <span class="hljs-number">100</span><span class="hljs-operator">%</span>開頭<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="MySQL-Where子句"><a href="#MySQL-Where子句" class="headerlink" title="MySQL Where子句"></a>MySQL Where子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於條件判斷，過濾資料</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>..<br><span class="hljs-keyword">from</span> <br>    表格名 <br><span class="hljs-keyword">where</span> <br>    條件<br></code></pre></td></tr></table></figure><br><h3 id="比較運算子"><a href="#比較運算子" class="headerlink" title="比較運算子"></a>比較運算子</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center">=</td><td align="center">等於</td></tr><tr><td align="center">&gt;</td><td align="center">大於</td></tr><tr><td align="center">&gt;=</td><td align="center">大於或等於</td></tr><tr><td align="center">&lt;</td><td align="center">小於</td></tr><tr><td align="center">&lt;=</td><td align="center">小於或等於</td></tr><tr><td align="center">!=</td><td align="center">不等於</td></tr></tbody></table><br><h3 id="邏輯運算子"><a href="#邏輯運算子" class="headerlink" title="邏輯運算子"></a>邏輯運算子</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center">and</td><td align="center">且 (&amp;&amp;)</td></tr><tr><td align="center">or</td><td align="center">或（||)</td></tr><tr><td align="center">not</td><td align="center">反向</td></tr></tbody></table><br><h3 id="SQL-特定運算子"><a href="#SQL-特定運算子" class="headerlink" title="SQL 特定運算子"></a>SQL 特定運算子</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center">between 值1 and 值2</td><td align="center">介於或等於</td></tr><tr><td align="center">in(值1, .., 值N)</td><td align="center">任一</td></tr><tr><td align="center">like</td><td align="center">模糊比對</td></tr><tr><td align="center">is null</td><td align="center">是null</td></tr></tbody></table><br><h3 id="Like-模糊比對"><a href="#Like-模糊比對" class="headerlink" title="Like 模糊比對"></a>Like 模糊比對</h3><br><table><thead><tr><th align="center">運算元</th><th align="center">語意</th></tr></thead><tbody><tr><td align="center">%</td><td align="center">任何含有零或多個字元的字串</td></tr><tr><td align="center">_</td><td align="center">任何單一字元</td></tr><tr><td align="center">escape</td><td align="center">指定跳脫字元用來跳脫上述字元</td></tr></tbody></table><br><p>範例：</p><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs SQL">ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%w%&#x27;</span>→ 含有w <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;w%&#x27;</span> → w開頭 <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%w&#x27;</span> → w結尾<br><br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;_w_&#x27;</span> → 第<span class="hljs-number">2</span>個字元為w，且ENAME長度為<span class="hljs-number">3</span> <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;_w&#x27;</span> → 第<span class="hljs-number">2</span>個字元為w，且ENAME長度為<span class="hljs-number">2</span> <br>ENAME <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;w_l%&#x27;</span> → w開頭，第<span class="hljs-number">3</span>字元為l<br><br>TEXT <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;100/%%&#x27;</span> <span class="hljs-keyword">escape</span> <span class="hljs-string">&#x27;/&#x27;</span> → <span class="hljs-number">100</span><span class="hljs-operator">%</span>開頭<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -101,9 +101,9 @@
     
     <tags>
       
-      <tag>資料庫</tag>
-      
       <tag>SQL</tag>
+      
+      <tag>資料庫</tag>
       
     </tags>
     
@@ -128,9 +128,9 @@
     
     <tags>
       
-      <tag>資料庫</tag>
-      
       <tag>SQL</tag>
+      
+      <tag>資料庫</tag>
       
     </tags>
     
@@ -155,9 +155,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -182,61 +182,7 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 其他標籤</title>
-    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>HTML</tag>
-      
-      <tag>前端開發</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 文字標籤</title>
-    <link href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-文字標籤"><a href="#HTML-文字標籤" class="headerlink" title="HTML 文字標籤"></a>HTML 文字標籤</h1><h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字標題，數字越大表示呈現的標題越大 </p></blockquote><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字段落</p></blockquote><h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><br><ul><li>無序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul><br><ul><li>有序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>以清單方式呈現，<strong>&lt;li&gt;</strong> 為清單項目</p></blockquote></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>HTML</tag>
       
       <tag>前端開發</tag>
       
@@ -263,9 +209,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -290,9 +236,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -317,9 +263,36 @@
     
     <tags>
       
+      <tag>前端開發</tag>
+      
       <tag>HTML</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 其他標籤</title>
+    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -344,9 +317,36 @@
     
     <tags>
       
+      <tag>前端開發</tag>
+      
       <tag>HTML</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 文字標籤</title>
+    <link href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-文字標籤"><a href="#HTML-文字標籤" class="headerlink" title="HTML 文字標籤"></a>HTML 文字標籤</h1><h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字標題，數字越大表示呈現的標題越大 </p></blockquote><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字段落</p></blockquote><h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><br><ul><li>無序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul><br><ul><li>有序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>以清單方式呈現，<strong>&lt;li&gt;</strong> 為清單項目</p></blockquote></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
