@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>MySQL Having子句 - Li&#39;s Blog</title>
+  <title>MySQL From子句 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="MySQL Having子句">
+            <span class="h2" id="subtitle" title="MySQL From子句">
               
             </span>
 
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      32 字
+      278 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -225,22 +225,56 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">MySQL Having子句</h1>
+            <h1 style="display: none">MySQL From子句</h1>
             
             <div class="markdown-body">
-              <h1 id="MySQL-Having子句"><a href="#MySQL-Having子句" class="headerlink" title="MySQL Having子句"></a>MySQL Having子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br>
+              <h1 id="MySQL-From子句"><a href="#MySQL-From子句" class="headerlink" title="MySQL From子句"></a>MySQL From子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br>
 
 <blockquote>
-<p>用於 Group by 後的條件判斷,用於過濾資料</p>
+<p>用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 </p>
+</blockquote>
+<blockquote>
+<p>From 來自多重資料則需使用 join .. on 做資料連結</p>
 </blockquote>
 <br>
 
 <h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>      ..<br><span class="hljs-keyword">from</span><br>     ..<br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <br>     .. <br><span class="hljs-keyword">having</span><br>     ..;<br>條件<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     ..<br><span class="hljs-keyword">from</span><br>     資料來源<span class="hljs-number">1</span> [[<span class="hljs-keyword">as</span>] 別名<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
 
+<h3 id="Join-多重資料連結"><a href="#Join-多重資料連結" class="headerlink" title="Join (多重資料連結)"></a>Join (多重資料連結)</h3><br>
+
+<ul>
+<li>相等連結(Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 範例-select敘述-from子句-equal join</span><br><span class="hljs-comment">-- Equal Join: on語法後有等於運算子</span><br><span class="hljs-comment">-- 若有一DEPTNO之值只在Table EMP或DEPT出現， -- 連結後該筆資料不會出現!!</span><br><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure></li>
+</ul>
 <br>
 
+<ul>
+<li>不相等連結(Non-Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    e.EMPNO, e.ENAME, e.SAL<br><span class="hljs-keyword">from</span><br>    EMP e<br>        <span class="hljs-keyword">join</span><br>    SAL_LEVEL s <span class="hljs-keyword">ON</span> e.SAL <span class="hljs-keyword">between</span> s.SAL_MIN <span class="hljs-keyword">and</span> s.SAL_MAX<br></code></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<ul>
+<li>左側連結(Left Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>以左邊的資料為主，即使沒有交集也會有左邊的資料</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<ul>
+<li>右側連結(Right Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">right</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p> 以右邊的資料為主，即使沒有交集也會有右邊的資料</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<ul>
+<li>自我連結(Self Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e1.ENAME,<br>     e2.ENAME <span class="hljs-keyword">as</span> MGR_NAME<br><span class="hljs-keyword">from</span><br>     EMP e1<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> EMP e2<br>          <span class="hljs-keyword">on</span> e1.MGR <span class="hljs-operator">=</span> e2.EMPNO<br></code></pre></td></tr></table></figure></li>
+</ul>
 
             </div>
             <hr>
@@ -277,18 +311,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL Group by子句</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/">
-                        <span class="hidden-mobile">MySQL Order by子句</span>
+                      <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/">
+                        <span class="hidden-mobile">MySQL Group by子句</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
