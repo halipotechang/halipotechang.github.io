@@ -182,35 +182,31 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL From子句
+        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Having子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL From子句用途：
+          MySQL Having子句用途：
 
 
-用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 
-
-
-From 來自多重資料則需使用 join .. on 做資料連結
+用於 Group by 後的條件判斷,用於過濾資料
 
 
 
 語法：
 
-1234select      ..from     資料來源1 [[as] 別名1]
-
-Join (多重資料連結)
+12345678910select      ..from     ..     [where ..] group by      .. having     ..;條件
 
 
-相等連結(Equal Join)12345678910-- 範例-se
+
+
         </a>
       </p>
 
@@ -314,29 +310,32 @@ Join (多重資料連結)
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Having子句
+        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Limit子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL Having子句用途：
+          MySQL MySQL Limit子句用途：
 
 
-用於 Group by 後的條件判斷,用於過濾資料
+限制資料筆數
 
 
 
 語法：
 
-12345678910select      ..from     ..     [where ..] group by      .. having     ..;條件
+123456select      .. from      ..limit     [略過筆數,] 顯示筆數
+
+略過筆數(Offset): (從最前面開始算) 欲跳過的資料筆數，需&gt;=0，預設為0 
 
 
+顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0
 
 
         </a>
@@ -379,34 +378,35 @@ Join (多重資料連結)
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Limit子句
+        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL From子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL MySQL Limit子句用途：
+          MySQL From子句用途：
 
 
-限制資料筆數
+用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 
+
+
+From 來自多重資料則需使用 join .. on 做資料連結
 
 
 
 語法：
 
-123456select      .. from      ..limit     [略過筆數,] 顯示筆數
+1234select      ..from     資料來源1 [[as] 別名1]
 
-略過筆數(Offset): (從最前面開始算) 欲跳過的資料筆數，需&gt;=0，預設為0 
-
-
-顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0
+Join (多重資料連結)
 
 
+相等連結(Equal Join)12345678910-- 範例-se
         </a>
       </p>
 
