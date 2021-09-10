@@ -31,6 +31,33 @@
   
   
   <entry>
+    <title>MySQL Group by子句</title>
+    <link href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-Order-by子句"><a href="#MySQL-Order-by子句" class="headerlink" title="MySQL Order by子句"></a>MySQL Order by子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於資料分組</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     .. <br><span class="hljs-keyword">from</span> <br>     .. <br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span><br>     欄位名<span class="hljs-number">1</span><span class="hljs-operator">|</span>欄位序<span class="hljs-number">1</span><span class="hljs-operator">|</span>運算式<span class="hljs-number">1</span>,<br>     ..,<br>     欄位名N<span class="hljs-operator">|</span>欄位序N<span class="hljs-operator">|</span>運算式N,<br>     [<span class="hljs-keyword">with</span> <span class="hljs-keyword">rollup</span>]<br></code></pre></td></tr></table></figure><blockquote><p> with rollup: 在後面加上一筆總計或小計(多個分組依據時)的資料</p></blockquote><br>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>SQL</tag>
+      
+      <tag>MySQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MySQL Where子句</title>
     <link href="/2021/09/10/MySQL%20Where%E5%AD%90%E5%8F%A5/"/>
     <url>/2021/09/10/MySQL%20Where%E5%AD%90%E5%8F%A5/</url>
