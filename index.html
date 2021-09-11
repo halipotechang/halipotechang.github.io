@@ -270,35 +270,29 @@ boolean
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL From子句
+        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Group by子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL From子句用途：
+          MySQL Group by子句用途：
 
 
-用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 
-
-
-From 來自多重資料則需使用 join .. on 做資料連結
+用於資料分組
 
 
 
 語法：
 
-1234select      ..from     資料來源1 [[as] 別名1]
+12345678910select      .. from      ..      [where ..] group by     欄位名1|欄位序1|運算式1,     ..,     欄位名N|欄位序N|運算式N,     [with rollup]
 
-Join (多重資料連結)
-
-
-相等連結(Equal Join)12345678910-- 範例-se
+ with rollup: 在後面加上一筆總計或小計(多個分組依
         </a>
       </p>
 
@@ -339,32 +333,27 @@ Join (多重資料連結)
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Order by子句
+        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Having子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL Order by子句用途：
+          MySQL Having子句用途：
 
 
-用於資料排序
+用於 Group by 後的條件判斷,用於過濾資料
 
 
 
 語法：
 
-1234567select     .. from     ..order by    欄位名1|別名1|欄位序1|運算式1 [asc|desc], ..,    欄位名N|別名N|欄位序N|運算式N [asc|desc];
-
-asc : 遞增
-
-
-desc: 遞減
+12345678910select      ..from     ..     [where ..] group by      .. having     ..;條件
 
 
 
@@ -477,29 +466,35 @@ desc: 遞減
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Group by子句
+        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL From子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL Group by子句用途：
+          MySQL From子句用途：
 
 
-用於資料分組
+用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 
+
+
+From 來自多重資料則需使用 join .. on 做資料連結
 
 
 
 語法：
 
-12345678910select      .. from      ..      [where ..] group by     欄位名1|欄位序1|運算式1,     ..,     欄位名N|欄位序N|運算式N,     [with rollup]
+1234select      ..from     資料來源1 [[as] 別名1]
 
- with rollup: 在後面加上一筆總計或小計(多個分組依
+Join (多重資料連結)
+
+
+相等連結(Equal Join)12345678910-- 範例-se
         </a>
       </p>
 
@@ -540,27 +535,32 @@ desc: 遞減
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Having子句
+        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Order by子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL Having子句用途：
+          MySQL Order by子句用途：
 
 
-用於 Group by 後的條件判斷,用於過濾資料
+用於資料排序
 
 
 
 語法：
 
-12345678910select      ..from     ..     [where ..] group by      .. having     ..;條件
+1234567select     .. from     ..order by    欄位名1|別名1|欄位序1|運算式1 [asc|desc], ..,    欄位名N|別名N|欄位序N|運算式N [asc|desc];
+
+asc : 遞增
+
+
+desc: 遞減
 
 
 
