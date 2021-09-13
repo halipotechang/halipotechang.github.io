@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>MySQL DCL</title>
+    <link href="/2021/09/13/MySQL%20DCL/"/>
+    <url>/2021/09/13/MySQL%20DCL/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-TCL-交易控制語言"><a href="#MySQL-TCL-交易控制語言" class="headerlink" title="MySQL TCL (交易控制語言)"></a>MySQL TCL (交易控制語言)</h1><h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><br><ul><li>用以控制資料庫中的交易</li><li>MySQL只有<code>InnoDB</code>引擎支援交易控制<br></li></ul><h2 id="敘述"><a href="#敘述" class="headerlink" title="敘述"></a>敘述</h2><br><ul><li>set autocommit: 啟用/停用交易控制模式。是全局設定，之後的所有敘述都會受影響</li></ul><blockquote><p>0 / off:啟用交易控制模式 1 / on:停用交易控制模式(預設)</p></blockquote><ul><li><p>start transaction: 開啟單一交易控制。只有當前範圍內敘述會受影響</p></li><li><p>commit: 送交，配合start transaction使用時，會結束交易</p></li><li><p>rollback: 還原，配合start transaction使用時，會結束交易</p></li><li><p>savepoint: 設定一個儲存點。rollback可指定還原至儲存點</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MySQL DML</title>
     <link href="/2021/09/13/MySQL%20DML/"/>
     <url>/2021/09/13/MySQL%20DML/</url>
@@ -20,9 +47,9 @@
     
     <tags>
       
-      <tag>SQL</tag>
-      
       <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -47,9 +74,9 @@
     
     <tags>
       
-      <tag>SQL</tag>
-      
       <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -112,33 +139,6 @@
   
   
   <entry>
-    <title>MySQL Having子句</title>
-    <link href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/</url>
-    
-    <content type="html"><![CDATA[<h1 id="MySQL-Having子句"><a href="#MySQL-Having子句" class="headerlink" title="MySQL Having子句"></a>MySQL Having子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 Group by 後的條件判斷,用於過濾資料</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>      ..<br><span class="hljs-keyword">from</span><br>     ..<br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <br>     .. <br><span class="hljs-keyword">having</span><br>     ..;<br>條件<br></code></pre></td></tr></table></figure><br>]]></content>
-    
-    
-    <categories>
-      
-      <category>MySQL</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>SQL</tag>
-      
-      <tag>MySQL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>MySQL Group by子句</title>
     <link href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/"/>
     <url>/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/</url>
@@ -155,36 +155,9 @@
     
     <tags>
       
-      <tag>SQL</tag>
-      
       <tag>MySQL</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>MySQL Limit子句</title>
-    <link href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/</url>
-    
-    <content type="html"><![CDATA[<h1 id="MySQL-MySQL-Limit子句"><a href="#MySQL-MySQL-Limit子句" class="headerlink" title="MySQL MySQL Limit子句"></a>MySQL MySQL Limit子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>限制資料筆數</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     .. <br><span class="hljs-keyword">from</span> <br>     ..<br>limit<br>     [略過筆數,] 顯示筆數<br></code></pre></td></tr></table></figure><blockquote><p>略過筆數(Offset): (從最前面開始算) 欲跳過的資料筆數，需&gt;=0，預設為0 </p></blockquote><blockquote><p>顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>MySQL</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>SQL</tag>
-      
-      <tag>MySQL</tag>
       
     </tags>
     
@@ -209,9 +182,36 @@
     
     <tags>
       
+      <tag>MySQL</tag>
+      
       <tag>SQL</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL Limit子句</title>
+    <link href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-MySQL-Limit子句"><a href="#MySQL-MySQL-Limit子句" class="headerlink" title="MySQL MySQL Limit子句"></a>MySQL MySQL Limit子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>限制資料筆數</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     .. <br><span class="hljs-keyword">from</span> <br>     ..<br>limit<br>     [略過筆數,] 顯示筆數<br></code></pre></td></tr></table></figure><blockquote><p>略過筆數(Offset): (從最前面開始算) 欲跳過的資料筆數，需&gt;=0，預設為0 </p></blockquote><blockquote><p>顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -236,9 +236,36 @@
     
     <tags>
       
+      <tag>MySQL</tag>
+      
       <tag>SQL</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL Having子句</title>
+    <link href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-Having子句"><a href="#MySQL-Having子句" class="headerlink" title="MySQL Having子句"></a>MySQL Having子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 Group by 後的條件判斷,用於過濾資料</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>      ..<br><span class="hljs-keyword">from</span><br>     ..<br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <br>     .. <br><span class="hljs-keyword">having</span><br>     ..;<br>條件<br></code></pre></td></tr></table></figure><br>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -263,9 +290,9 @@
     
     <tags>
       
-      <tag>SQL</tag>
-      
       <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -290,9 +317,9 @@
     
     <tags>
       
-      <tag>SQL</tag>
-      
       <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
