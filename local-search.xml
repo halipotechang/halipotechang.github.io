@@ -56,9 +56,9 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
       
     </tags>
     
@@ -121,11 +121,11 @@
   
   
   <entry>
-    <title>MySQL From子句</title>
-    <link href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/</url>
+    <title>MySQL Having子句</title>
+    <link href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/</url>
     
-    <content type="html"><![CDATA[<h1 id="MySQL-From子句"><a href="#MySQL-From子句" class="headerlink" title="MySQL From子句"></a>MySQL From子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 </p></blockquote><blockquote><p>From 來自多重資料則需使用 join .. on 做資料連結</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     ..<br><span class="hljs-keyword">from</span><br>     資料來源<span class="hljs-number">1</span> [[<span class="hljs-keyword">as</span>] 別名<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><h3 id="Join-多重資料連結"><a href="#Join-多重資料連結" class="headerlink" title="Join (多重資料連結)"></a>Join (多重資料連結)</h3><br><ul><li>相等連結(Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 範例-select敘述-from子句-equal join</span><br><span class="hljs-comment">-- Equal Join: on語法後有等於運算子</span><br><span class="hljs-comment">-- 若有一DEPTNO之值只在Table EMP或DEPT出現， -- 連結後該筆資料不會出現!!</span><br><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>不相等連結(Non-Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    e.EMPNO, e.ENAME, e.SAL<br><span class="hljs-keyword">from</span><br>    EMP e<br>        <span class="hljs-keyword">join</span><br>    SAL_LEVEL s <span class="hljs-keyword">ON</span> e.SAL <span class="hljs-keyword">between</span> s.SAL_MIN <span class="hljs-keyword">and</span> s.SAL_MAX<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>左側連結(Left Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p>以左邊的資料為主，即使沒有交集也會有左邊的資料</p></blockquote></li></ul><br><ul><li>右側連結(Right Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">right</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p> 以右邊的資料為主，即使沒有交集也會有右邊的資料</p></blockquote></li></ul><br><ul><li>自我連結(Self Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e1.ENAME,<br>     e2.ENAME <span class="hljs-keyword">as</span> MGR_NAME<br><span class="hljs-keyword">from</span><br>     EMP e1<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> EMP e2<br>          <span class="hljs-keyword">on</span> e1.MGR <span class="hljs-operator">=</span> e2.EMPNO<br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="MySQL-Having子句"><a href="#MySQL-Having子句" class="headerlink" title="MySQL Having子句"></a>MySQL Having子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 Group by 後的條件判斷,用於過濾資料</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>      ..<br><span class="hljs-keyword">from</span><br>     ..<br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <br>     .. <br><span class="hljs-keyword">having</span><br>     ..;<br>條件<br></code></pre></td></tr></table></figure><br>]]></content>
     
     
     <categories>
@@ -148,11 +148,11 @@
   
   
   <entry>
-    <title>MySQL Having子句</title>
-    <link href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/</url>
+    <title>MySQL From子句</title>
+    <link href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/</url>
     
-    <content type="html"><![CDATA[<h1 id="MySQL-Having子句"><a href="#MySQL-Having子句" class="headerlink" title="MySQL Having子句"></a>MySQL Having子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 Group by 後的條件判斷,用於過濾資料</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>      ..<br><span class="hljs-keyword">from</span><br>     ..<br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <br>     .. <br><span class="hljs-keyword">having</span><br>     ..;<br>條件<br></code></pre></td></tr></table></figure><br>]]></content>
+    <content type="html"><![CDATA[<h1 id="MySQL-From子句"><a href="#MySQL-From子句" class="headerlink" title="MySQL From子句"></a>MySQL From子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 </p></blockquote><blockquote><p>From 來自多重資料則需使用 join .. on 做資料連結</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     ..<br><span class="hljs-keyword">from</span><br>     資料來源<span class="hljs-number">1</span> [[<span class="hljs-keyword">as</span>] 別名<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><h3 id="Join-多重資料連結"><a href="#Join-多重資料連結" class="headerlink" title="Join (多重資料連結)"></a>Join (多重資料連結)</h3><br><ul><li>相等連結(Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 範例-select敘述-from子句-equal join</span><br><span class="hljs-comment">-- Equal Join: on語法後有等於運算子</span><br><span class="hljs-comment">-- 若有一DEPTNO之值只在Table EMP或DEPT出現， -- 連結後該筆資料不會出現!!</span><br><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>不相等連結(Non-Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    e.EMPNO, e.ENAME, e.SAL<br><span class="hljs-keyword">from</span><br>    EMP e<br>        <span class="hljs-keyword">join</span><br>    SAL_LEVEL s <span class="hljs-keyword">ON</span> e.SAL <span class="hljs-keyword">between</span> s.SAL_MIN <span class="hljs-keyword">and</span> s.SAL_MAX<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>左側連結(Left Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p>以左邊的資料為主，即使沒有交集也會有左邊的資料</p></blockquote></li></ul><br><ul><li>右側連結(Right Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">right</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p> 以右邊的資料為主，即使沒有交集也會有右邊的資料</p></blockquote></li></ul><br><ul><li>自我連結(Self Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e1.ENAME,<br>     e2.ENAME <span class="hljs-keyword">as</span> MGR_NAME<br><span class="hljs-keyword">from</span><br>     EMP e1<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> EMP e2<br>          <span class="hljs-keyword">on</span> e1.MGR <span class="hljs-operator">=</span> e2.EMPNO<br></code></pre></td></tr></table></figure></li></ul>]]></content>
     
     
     <categories>
@@ -353,9 +353,9 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
       
     </tags>
     
@@ -380,9 +380,9 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
       
     </tags>
     
@@ -407,9 +407,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -434,36 +434,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 表格標籤</title>
-    <link href="/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  主要呈現表格 範圍</p></li><li><p>&lt;tr&gt;  主要呈現表格中的 列</p></li><li><p>&lt;td&gt;  主要呈現表格中的 儲存格</p></li><li><p>&lt;th&gt;  主要呈現表格中的表格 標題</p></li></ul><br><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;001&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>序號<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>部門<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>職稱<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>001<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>joh<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>RD <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>專員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>002<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>mar<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>SR <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>主任<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>003<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Cathy<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>HR<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>004<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Rome<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>border=” “ 為表格邊框的大小</p></blockquote><br>   <p>顯示：<br><br></p><table>        <tr>            <th>序號</th>            <th>姓名</th>            <th>部門</th>            <th>職稱</th>        </tr>        <tr>            <td>001</td>            <td>joh</td>             <td>RD </td>            <td>專員</td>        </tr>        <tr>            <td>002</td>             <td>mar</td>            <td>SR </td>            <td>主任</td>        </tr>            <tr>            <td>003</td>            <td>Cathy</td>            <td>HR</td>            <td>經理</td>        </tr>        <tr>            <td>004</td>            <td>Rome</td>            <td>PM</td>            <td>經理</td>        </tr></table>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>前端開發</tag>
-      
-      <tag>HTML</tag>
       
     </tags>
     
@@ -488,9 +461,36 @@
     
     <tags>
       
+      <tag>HTML</tag>
+      
       <tag>前端開發</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 表格標籤</title>
+    <link href="/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  主要呈現表格 範圍</p></li><li><p>&lt;tr&gt;  主要呈現表格中的 列</p></li><li><p>&lt;td&gt;  主要呈現表格中的 儲存格</p></li><li><p>&lt;th&gt;  主要呈現表格中的表格 標題</p></li></ul><br><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;001&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>序號<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>部門<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>職稱<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>001<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>joh<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>RD <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>專員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>002<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>mar<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>SR <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>主任<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>003<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Cathy<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>HR<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>004<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Rome<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>border=” “ 為表格邊框的大小</p></blockquote><br>   <p>顯示：<br><br></p><table>        <tr>            <th>序號</th>            <th>姓名</th>            <th>部門</th>            <th>職稱</th>        </tr>        <tr>            <td>001</td>            <td>joh</td>             <td>RD </td>            <td>專員</td>        </tr>        <tr>            <td>002</td>             <td>mar</td>            <td>SR </td>            <td>主任</td>        </tr>            <tr>            <td>003</td>            <td>Cathy</td>            <td>HR</td>            <td>經理</td>        </tr>        <tr>            <td>004</td>            <td>Rome</td>            <td>PM</td>            <td>經理</td>        </tr></table>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -515,9 +515,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -542,9 +542,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
