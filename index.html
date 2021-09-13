@@ -193,9 +193,7 @@
           
             
           
-          MySQL 子查詢
-
-用途
+          MySQL 子查詢用途
 
 有時候需要先透過select敘述取得一個結果，再用此結果去找出我們要的資料
 分類
@@ -206,7 +204,7 @@
 單欄單筆 (又稱純量(Scalar)) 
 12345select    *from        EMPwhere SAL &lt; (select AVG(SAL) from EMP);
 單欄多筆 (又稱多值(Multi-valued))
-123456select
+123456select *
         </a>
       </p>
 
@@ -378,6 +376,74 @@ boolean
               <a href="/tags/JAVA/">JAVA</a>
             
               <a href="/tags/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/">物件導向</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Limit子句
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
+          
+          
+            
+          
+          MySQL MySQL Limit子句用途：
+
+
+限制資料筆數
+
+
+
+語法：
+
+123456select      .. from      ..limit     [略過筆數,] 顯示筆數
+
+略過筆數(Offset): (從最前面開始算) 欲跳過的資料筆數，需&gt;=0，預設為0 
+
+
+顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-10 20:32" pubdate>
+              2021-09-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/MySQL/">MySQL</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/SQL/">SQL</a>
+            
+              <a href="/tags/MySQL/">MySQL</a>
             
           </div>
         
@@ -616,74 +682,6 @@ asc : 遞增
 desc: 遞減
 
 
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-10 20:32" pubdate>
-              2021-09-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/MySQL/">MySQL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/SQL/">SQL</a>
-            
-              <a href="/tags/MySQL/">MySQL</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Limit子句
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/" target="_self">
-          
-          
-            
-          
-          MySQL MySQL Limit子句用途：
-
-
-限制資料筆數
-
-
-
-語法：
-
-123456select      .. from      ..limit     [略過筆數,] 顯示筆數
-
-略過筆數(Offset): (從最前面開始算) 欲跳過的資料筆數，需&gt;=0，預設為0 
-
-
-顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0
 
 
         </a>
