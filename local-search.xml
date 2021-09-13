@@ -11,6 +11,12 @@
     <content type="html"><![CDATA[<h1 id="MySQL-DML-資料操作語言"><a href="#MySQL-DML-資料操作語言" class="headerlink" title="MySQL DML (資料操作語言)"></a>MySQL DML (資料操作語言)</h1><h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><br><p><code>用以新增、刪除、修改Table內的資料</code></p><h2 id="敘述"><a href="#敘述" class="headerlink" title="敘述"></a>敘述</h2><br><ul><li>insert: 新增資料至Table<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> 資料表名[(欄位名, ..)] <br><span class="hljs-keyword">values</span> (值, ..)<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>delete: 刪除Table內的資料<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> 資料表名 <br><span class="hljs-keyword">where</span> 條件<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>update: 修改Table內的資料<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql">update 資料表名<br><span class="hljs-keyword">set</span><br>    欄位名 <span class="hljs-operator">=</span> 值<br><span class="hljs-keyword">where</span> 條件<br></code></pre></td></tr></table></figure></li></ul>]]></content>
     
     
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
     
     <tags>
       
