@@ -182,32 +182,27 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Order by子句
+        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Having子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL Order by子句用途：
+          MySQL Having子句用途：
 
 
-用於資料排序
+用於 Group by 後的條件判斷,用於過濾資料
 
 
 
 語法：
 
-1234567select     .. from     ..order by    欄位名1|別名1|欄位序1|運算式1 [asc|desc], ..,    欄位名N|別名N|欄位序N|運算式N [asc|desc];
-
-asc : 遞增
-
-
-desc: 遞減
+12345678910select      ..from     ..     [where ..] group by      .. having     ..;條件
 
 
 
