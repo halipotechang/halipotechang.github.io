@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>JAVA 變數與常數 - Li&#39;s Blog</title>
+  <title>JAVA 運算子 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="JAVA 變數與常數">
+            <span class="h2" id="subtitle" title="JAVA 運算子">
               
             </span>
 
@@ -173,7 +173,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-18 10:14" pubdate>
+      <time datetime="2021-09-18 10:39" pubdate>
         2021年9月18日 上午
       </time>
     </span>
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      178 字
+      290 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      3
        分钟
     </span>
   
@@ -225,37 +225,190 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JAVA 變數與常數</h1>
+            <h1 style="display: none">JAVA 運算子</h1>
             
             <div class="markdown-body">
-              <h1 id="JAVA-變數與常數"><a href="#JAVA-變數與常數" class="headerlink" title="JAVA 變數與常數"></a>JAVA 變數與常數</h1><h2 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h2><br>
+              <h1 id="JAVA-運算子"><a href="#JAVA-運算子" class="headerlink" title="JAVA 運算子"></a>JAVA 運算子</h1><h2 id="算術運算子"><a href="#算術運算子" class="headerlink" title="算術運算子"></a>算術運算子</h2><br>
 
-<ul>
-<li>每個變數名字都代表著記憶體中某個記憶體位址</li>
-<li>變數名稱:<ul>
-<li>可以用A-Z, a-z, 0-9, _(底線), $，長度不限制</li>
-<li>第一個字不可以是數字</li>
-<li>大小寫不同</li>
-</ul>
-</li>
-<li>不能是關鍵字 (keyword) 或稱作保留字</li>
-<li>變數、方法名稱以小寫開頭，類別名稱為大寫開頭</li>
-</ul>
-<p>宣告方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">1</span>, k = <span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">算術運算子</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center"><code>(+ 數字 加法運算)</code>  <code>(+ &quot; &quot; 字串串接)</code></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">減法</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘法</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">除法</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取餘數</td>
+</tr>
+</tbody></table>
 <br>
 
-<h2 id="常數"><a href="#常數" class="headerlink" title="常數"></a>常數</h2><br>
+<h2 id="遞增遞減運算子"><a href="#遞增遞減運算子" class="headerlink" title="遞增遞減運算子"></a>遞增遞減運算子</h2><br>
+
+<table>
+<thead>
+<tr>
+<th align="center">遞增遞減運算子</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a++</td>
+<td align="center">a = a + 1</td>
+</tr>
+<tr>
+<td align="center">a–</td>
+<td align="center">a = a - 1</td>
+</tr>
+</tbody></table>
+<br>
 
 <ul>
-<li>若程式裡所使用的資料不會有異動或修改的前提下，可宣告成為常數來保證資料的不變性</li>
+<li><p>後置型 (a++):<code>先取值後再遞增</code></p>
+</li>
+<li><p>前置型 (++a):<code>先遞增後再取值</code></p>
+</li>
 </ul>
-<p>宣告方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> PI = <span class="hljs-number">3.14</span>;<br></code></pre></td></tr></table></figure>
+<br>
 
-<blockquote>
-<p>常數(Constant)通常以全部大寫命名，以＿分隔單字</p>
-</blockquote>
+<h2 id="指定運算子"><a href="#指定運算子" class="headerlink" title="指定運算子"></a>指定運算子</h2><br>
+
+<p>將右邊運算完成的結果指定給左邊的變數</p>
+<table>
+<thead>
+<tr>
+<th align="center">指定運算子</th>
+<th align="center">用法</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">=</td>
+<td align="center">a = 1</td>
+<td align="center">a = 1</td>
+</tr>
+<tr>
+<td align="center">+=</td>
+<td align="center">a += 1</td>
+<td align="center">a = a + 1</td>
+</tr>
+<tr>
+<td align="center">-=</td>
+<td align="center">a -= 1</td>
+<td align="center">a = a - 1</td>
+</tr>
+<tr>
+<td align="center">*=</td>
+<td align="center">a *= 1</td>
+<td align="center">a = a * 1</td>
+</tr>
+<tr>
+<td align="center">/=</td>
+<td align="center">a /= 1</td>
+<td align="center">a = a / 1</td>
+</tr>
+<tr>
+<td align="center">%=</td>
+<td align="center">a %= 1</td>
+<td align="center">a = a % 1</td>
+</tr>
+</tbody></table>
+<br>
+
+<h2 id="關係運算子"><a href="#關係運算子" class="headerlink" title="關係運算子"></a>關係運算子</h2><br>
+
+<p>關係運算子(Relational operators)用來比較兩個變數的值，其<code>回傳值結果是一個布林值</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">關係運算子</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&lt;</td>
+<td align="center">小於</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">小於等於</td>
+</tr>
+<tr>
+<td align="center">==</td>
+<td align="center">等於</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">不等於</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">大於</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">大於等於</td>
+</tr>
+</tbody></table>
+<br>
+
+<h2 id="條件運算子"><a href="#條件運算子" class="headerlink" title="條件運算子"></a>條件運算子</h2><br>
+
+<p>條件運算子 (Conditional operators)是將兩個布林值合併起來的運算子，運算結果仍為布林值</p>
+<table>
+<thead>
+<tr>
+<th align="center">條件運算子</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">and</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td align="center">or</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="center">not</td>
+</tr>
+</tbody></table>
+<br>
+
+<h2 id="三元運算子"><a href="#三元運算子" class="headerlink" title="三元運算子"></a>三元運算子</h2><br>
+
+<p>三元運算子 (Ternary operators)是一個簡略的if – else敘述</p>
+<table>
+<thead>
+<tr>
+<th align="center">三元運算子</th>
+<th align="center">說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">a ? b : c</td>
+<td align="center"><code>(true = b)</code> 、 <code>( false = c )</code></td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
@@ -290,18 +443,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/18/JAVA%20%E9%81%8B%E7%AE%97%E5%AD%90/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JAVA 運算子</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/14/MySQL%20DDL/">
-                        <span class="hidden-mobile">MySQL DDL</span>
+                      <a href="/2021/09/18/JAVA%20%E8%AE%8A%E6%95%B8%E8%88%87%E5%B8%B8%E6%95%B8/">
+                        <span class="hidden-mobile">JAVA 變數與常數</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
