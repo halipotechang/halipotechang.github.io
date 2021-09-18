@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>MySQL View</title>
+    <link href="/2021/09/18/MySQL%20View/"/>
+    <url>/2021/09/18/MySQL%20View/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-View"><a href="#MySQL-View" class="headerlink" title="MySQL View"></a>MySQL View</h1><h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><br><ul><li><p>由一段select敘述描述而成，呈現的結果即select敘述的查詢結果</p></li><li><p>簡化複雜的select敘述</p></li><li><p>隱藏資料，限制程式端工程師能看到的資料</p></li><li><p>將View設計成唯讀，可避免程式端工程師修改資料</p></li></ul><br><h2 id="語法"><a href="#語法" class="headerlink" title="語法:"></a>語法:</h2><br><h3 id="create-view"><a href="#create-view" class="headerlink" title="create view"></a>create view</h3><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> [<span class="hljs-keyword">or</span> replace] <span class="hljs-keyword">view</span> 檢視表名 [(欄位名<span class="hljs-number">1</span>, .., 欄位名N)] <br><span class="hljs-keyword">as</span><br><span class="hljs-keyword">select</span>敘述..<br>[<span class="hljs-keyword">with</span> [<span class="hljs-keyword">cascaded</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">local</span>] <span class="hljs-keyword">check</span> option]<br></code></pre></td></tr></table></figure><blockquote><p>界習慣會在View名稱前加上V_，以跟Table區分</p></blockquote><blockquote><p>with [cascaded | local] check option:執行DML時檢查where子句</p></blockquote><br><h3 id="drop-view"><a href="#drop-view" class="headerlink" title="drop view"></a>drop view</h3><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">view</span> [if <span class="hljs-keyword">exists</span>] 檢視表名<span class="hljs-number">1</span> [, 檢視表名<span class="hljs-number">2</span>, ..];<br></code></pre></td></tr></table></figure><blockquote><p>View也有可能是其他View的基底資料表， 所以移除後可能造成其他View的錯誤!</p></blockquote><br><h3 id="alter-view"><a href="#alter-view" class="headerlink" title="alter view"></a>alter view</h3><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">view</span> 檢視表名 [(欄位名<span class="hljs-number">1</span>, .., 欄位名N)] <span class="hljs-keyword">as</span><br><span class="hljs-keyword">select</span>敘述..<br>[<span class="hljs-keyword">with</span> [<span class="hljs-keyword">cascaded</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">local</span>] <span class="hljs-keyword">check</span> option]<br></code></pre></td></tr></table></figure><blockquote><p> View本身是個不複雜的物件，若要修改View名稱，移除後重新建立即可</p></blockquote><br><h3 id="可安全異動資料的View"><a href="#可安全異動資料的View" class="headerlink" title="可安全異動資料的View"></a>可安全異動資料的View</h3><ul><li>須符合以下條件<ol><li>無計算欄位、函數欄位 </li><li>基底資料表只有一個</li></ol></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JAVA 方法</title>
     <link href="/2021/09/18/JAVA%20%E6%96%B9%E6%B3%95/"/>
     <url>/2021/09/18/JAVA%20%E6%96%B9%E6%B3%95/</url>
@@ -590,65 +615,11 @@
   
   
   <entry>
-    <title>HTML 其他標籤</title>
-    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>HTML</tag>
-      
-      <tag>前端開發</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>HTML 圖片、多媒體標籤</title>
     <link href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/"/>
     <url>/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/</url>
     
     <content type="html"><![CDATA[<h1 id="HTML-圖片、多媒體標籤"><a href="#HTML-圖片、多媒體標籤" class="headerlink" title="HTML 圖片、多媒體標籤"></a>HTML 圖片、多媒體標籤</h1><h2 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h2><br><ul><li>&lt;img&gt; 顯示圖片標籤</li></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>src=””  為圖片來源 </p></blockquote><blockquote><p>alt=””   為替代文字</p></blockquote><h2 id="多媒體"><a href="#多媒體" class="headerlink" title="多媒體"></a>多媒體</h2><br><ul><li><p>&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;object&gt; 多媒體資料以object方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>data=”” 外部資源url</p></blockquote></li></ul><br><ul><li><p>&lt;video&gt; 將影片資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;audio&gt; 將聲音資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>HTML</tag>
-      
-      <tag>前端開發</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 表單標籤</title>
-    <link href="/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  表單的範圍</p></li><li><p>&lt;fieldset&gt;  表單欄位的所有集結區域</p></li><li><p>&lt;legend&gt;  表單的標題</p></li><li><p>&lt;input&gt;  表單單行文字欄位</p></li><li><p>&lt;textarea&gt; 表單多行文字欄位</p></li><li><p>&lt;button&gt;  表單按鈕</p><br></li></ul><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>留言板<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span>留言主題:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言內容&quot;</span>&gt;</span>留言內容:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言內容&quot;</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;30&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span>電子郵件:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>送出<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure><br> <p>顯示：<br><br></p><form action>    <fieldset>        <legend>留言板</legend>        <p><label for="留言主題">留言主題:</label><input type="text" id="留言主題"></p>        <p><label for="留言內容">留言內容:</label><textarea name id="留言內容" cols="30" rows="10"></textarea></p>        <p><label for="電子郵件">電子郵件:</label><input type="text" id="電子郵件"></p>        <p><button type>送出</button></p>    </fieldset></form>]]></content>
     
     
     <categories>
@@ -698,11 +669,65 @@
   
   
   <entry>
+    <title>HTML 其他標籤</title>
+    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>HTML 語意標籤</title>
     <link href="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/"/>
     <url>/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/</url>
     
     <content type="html"><![CDATA[<h1 id="HTML語意標籤"><a href="#HTML語意標籤" class="headerlink" title="HTML語意標籤"></a>HTML語意標籤</h1><br><blockquote><p>HTML5新標籤<br>最大的目的是讓搜尋引擎或是其他軟體工具，可以更清楚的了解網頁中每個區塊的設計目的。</p></blockquote><br><ul><li>article | 文字範圍 </li><li>aside | 側邊欄 </li><li>details | 可看見或隱藏的詳細資訊 </li><li>summary | 針對details定義一個可視的說明</li><li>figcaption | 獨立內容區段 通常figure一起使用 </li><li>figure | 獨立內容區段 針對影像內容進行說明</li><li>footer | 頁面的下方區段 </li><li>header | 頁面的上方區段 </li><li>nav | Menu</li><li>time | 時間 </li></ul><br><p><img src="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/websideLayout.gif" alt=" "></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 表單標籤</title>
+    <link href="/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br><ul><li><p>&lt;table&gt;  表單的範圍</p></li><li><p>&lt;fieldset&gt;  表單欄位的所有集結區域</p></li><li><p>&lt;legend&gt;  表單的標題</p></li><li><p>&lt;input&gt;  表單單行文字欄位</p></li><li><p>&lt;textarea&gt; 表單多行文字欄位</p></li><li><p>&lt;button&gt;  表單按鈕</p><br></li></ul><p>範例：<br><br></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>留言板<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span>留言主題:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言主題&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;留言內容&quot;</span>&gt;</span>留言內容:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;留言內容&quot;</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;30&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span>電子郵件:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;電子郵件&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>送出<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure><br> <p>顯示：<br><br></p><form action>    <fieldset>        <legend>留言板</legend>        <p><label for="留言主題">留言主題:</label><input type="text" id="留言主題"></p>        <p><label for="留言內容">留言內容:</label><textarea name id="留言內容" cols="30" rows="10"></textarea></p>        <p><label for="電子郵件">電子郵件:</label><input type="text" id="電子郵件"></p>        <p><button type>送出</button></p>    </fieldset></form>]]></content>
     
     
     <categories>

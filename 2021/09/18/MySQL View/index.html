@@ -18,9 +18,25 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>封存 - Li&#39;s Blog</title>
+  <title>MySQL View - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,9 +163,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="封存">
+            <span class="h2" id="subtitle" title="MySQL View">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-18 14:36" pubdate>
+        2021年9月18日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      261 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -162,88 +215,140 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">總共 28 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/09/08/CSS%20BoxModel/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">CSS BoxModel</span>
-      <time style="float: right;">09-08</time>
-    </a>
-  
-    
-    <a href="/2021/09/08/CSS%20%E5%A5%97%E7%94%A8%E6%96%B9%E5%BC%8F/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">CSS 套用方式</span>
-      <time style="float: right;">09-08</time>
-    </a>
-  
-    
-    <a href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML 文字標籤</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-    
-    <a href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML 圖片、多媒體標籤</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-    
-    <a href="/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML 表格標籤</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-    
-    <a href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML 其他標籤</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-    
-    <a href="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML 語意標籤</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-    
-    <a href="/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML 表單標籤</span>
-      <time style="float: right;">09-07</time>
-    </a>
-  
-</div>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">MySQL View</h1>
+            
+            <div class="markdown-body">
+              <h1 id="MySQL-View"><a href="#MySQL-View" class="headerlink" title="MySQL View"></a>MySQL View</h1><h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><br>
+
+<ul>
+<li><p>由一段select敘述描述而成，呈現的結果即select敘述的查詢結果</p>
+</li>
+<li><p>簡化複雜的select敘述</p>
+</li>
+<li><p>隱藏資料，限制程式端工程師能看到的資料</p>
+</li>
+<li><p>將View設計成唯讀，可避免程式端工程師修改資料</p>
+</li>
+</ul>
+<br>
+
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法:"></a>語法:</h2><br>
+
+<h3 id="create-view"><a href="#create-view" class="headerlink" title="create view"></a>create view</h3><br>
 
 
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2021/09/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2021/09/">1</a><a class="page-number" href="/archives/2021/09/page/2/#board">2</a><span class="page-number current">3</span>
-    </span>
-  </nav>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> [<span class="hljs-keyword">or</span> replace] <span class="hljs-keyword">view</span> 檢視表名 [(欄位名<span class="hljs-number">1</span>, .., 欄位名N)] <br><span class="hljs-keyword">as</span><br><span class="hljs-keyword">select</span>敘述..<br>[<span class="hljs-keyword">with</span> [<span class="hljs-keyword">cascaded</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">local</span>] <span class="hljs-keyword">check</span> option]<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>界習慣會在View名稱前加上V_，以跟Table區分</p>
+</blockquote>
+<blockquote>
+<p>with [cascaded | local] check option:執行DML時檢查where子句</p>
+</blockquote>
+<br>
 
+<h3 id="drop-view"><a href="#drop-view" class="headerlink" title="drop view"></a>drop view</h3><br>
 
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">view</span> [if <span class="hljs-keyword">exists</span>] 檢視表名<span class="hljs-number">1</span> [, 檢視表名<span class="hljs-number">2</span>, ..];<br></code></pre></td></tr></table></figure>
 
+<blockquote>
+<p>View也有可能是其他View的基底資料表， 所以移除後可能造成其他View的錯誤!</p>
+</blockquote>
+<br>
 
-              </div>
+<h3 id="alter-view"><a href="#alter-view" class="headerlink" title="alter view"></a>alter view</h3><br>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">view</span> 檢視表名 [(欄位名<span class="hljs-number">1</span>, .., 欄位名N)] <span class="hljs-keyword">as</span><br><span class="hljs-keyword">select</span>敘述..<br>[<span class="hljs-keyword">with</span> [<span class="hljs-keyword">cascaded</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">local</span>] <span class="hljs-keyword">check</span> option]<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p> View本身是個不複雜的物件，若要修改View名稱，移除後重新建立即可</p>
+</blockquote>
+<br>
+
+<h3 id="可安全異動資料的View"><a href="#可安全異動資料的View" class="headerlink" title="可安全異動資料的View"></a>可安全異動資料的View</h3><ul>
+<li>須符合以下條件<ol>
+<li>無計算欄位、函數欄位 </li>
+<li>基底資料表只有一個</li>
+</ol>
+</li>
+</ul>
+
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/MySQL/">MySQL</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特別聲明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW" rel="nofollow noopener noopener">CC BY-SA 4.0 </a>協議
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/18/JAVA%20%E6%96%B9%E6%B3%95/">
+                        <span class="hidden-mobile">JAVA 方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -323,9 +428,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 
