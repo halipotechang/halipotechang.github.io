@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>JAVA 變數與常數</title>
+    <link href="/2021/09/18/JAVA%20%E8%AE%8A%E6%95%B8%E8%88%87%E5%B8%B8%E6%95%B8/"/>
+    <url>/2021/09/18/JAVA%20%E8%AE%8A%E6%95%B8%E8%88%87%E5%B8%B8%E6%95%B8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="JAVA-變數與常數"><a href="#JAVA-變數與常數" class="headerlink" title="JAVA 變數與常數"></a>JAVA 變數與常數</h1><h2 id="變數："><a href="#變數：" class="headerlink" title="變數："></a>變數：</h2><br><ul><li>每個變數名字都代表著記憶體中某個記憶體位址</li><li>變數名稱:<ul><li>可以用A-Z, a-z, 0-9, _(底線), $，長度不限制</li><li>第一個字不可以是數字</li><li>大小寫不同</li></ul></li><li>不能是關鍵字 (keyword) 或稱作保留字</li><li>變數、方法名稱以小寫開頭，類別名稱為大寫開頭</li></ul><p>宣告方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">1</span>, k = <span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure><br><h2 id="常數"><a href="#常數" class="headerlink" title="常數"></a>常數</h2><br><ul><li>若程式裡所使用的資料不會有異動或修改的前提下，可宣告成為常數來保證資料的不變性</li></ul><p>宣告方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> PI = <span class="hljs-number">3.14</span>;<br></code></pre></td></tr></table></figure><blockquote><p>常數(Constant)通常以全部大寫命名，以＿分隔單字</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>JAVA SE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MySQL DDL</title>
     <link href="/2021/09/14/MySQL%20DDL/"/>
     <url>/2021/09/14/MySQL%20DDL/</url>
@@ -193,60 +218,6 @@
   
   
   <entry>
-    <title>MySQL Order by子句</title>
-    <link href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/</url>
-    
-    <content type="html"><![CDATA[<h1 id="MySQL-Order-by子句"><a href="#MySQL-Order-by子句" class="headerlink" title="MySQL Order by子句"></a>MySQL Order by子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於資料排序</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     .. <br><span class="hljs-keyword">from</span><br>     ..<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span><br>    欄位名<span class="hljs-number">1</span><span class="hljs-operator">|</span>別名<span class="hljs-number">1</span><span class="hljs-operator">|</span>欄位序<span class="hljs-number">1</span><span class="hljs-operator">|</span>運算式<span class="hljs-number">1</span> [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>], ..,<br>    欄位名N<span class="hljs-operator">|</span>別名N<span class="hljs-operator">|</span>欄位序N<span class="hljs-operator">|</span>運算式N [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>];<br></code></pre></td></tr></table></figure><blockquote><p>asc : 遞增</p></blockquote><blockquote><p>desc: 遞減</p></blockquote><br>]]></content>
-    
-    
-    <categories>
-      
-      <category>MySQL</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-      <tag>SQL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>MySQL From子句</title>
-    <link href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/</url>
-    
-    <content type="html"><![CDATA[<h1 id="MySQL-From子句"><a href="#MySQL-From子句" class="headerlink" title="MySQL From子句"></a>MySQL From子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 </p></blockquote><blockquote><p>From 來自多重資料則需使用 join .. on 做資料連結</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     ..<br><span class="hljs-keyword">from</span><br>     資料來源<span class="hljs-number">1</span> [[<span class="hljs-keyword">as</span>] 別名<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><h3 id="Join-多重資料連結"><a href="#Join-多重資料連結" class="headerlink" title="Join (多重資料連結)"></a>Join (多重資料連結)</h3><br><ul><li>相等連結(Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 範例-select敘述-from子句-equal join</span><br><span class="hljs-comment">-- Equal Join: on語法後有等於運算子</span><br><span class="hljs-comment">-- 若有一DEPTNO之值只在Table EMP或DEPT出現， -- 連結後該筆資料不會出現!!</span><br><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>不相等連結(Non-Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    e.EMPNO, e.ENAME, e.SAL<br><span class="hljs-keyword">from</span><br>    EMP e<br>        <span class="hljs-keyword">join</span><br>    SAL_LEVEL s <span class="hljs-keyword">ON</span> e.SAL <span class="hljs-keyword">between</span> s.SAL_MIN <span class="hljs-keyword">and</span> s.SAL_MAX<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>左側連結(Left Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p>以左邊的資料為主，即使沒有交集也會有左邊的資料</p></blockquote></li></ul><br><ul><li>右側連結(Right Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">right</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p> 以右邊的資料為主，即使沒有交集也會有右邊的資料</p></blockquote></li></ul><br><ul><li>自我連結(Self Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e1.ENAME,<br>     e2.ENAME <span class="hljs-keyword">as</span> MGR_NAME<br><span class="hljs-keyword">from</span><br>     EMP e1<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> EMP e2<br>          <span class="hljs-keyword">on</span> e1.MGR <span class="hljs-operator">=</span> e2.EMPNO<br></code></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>MySQL</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-      <tag>SQL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>MySQL Group by子句</title>
     <link href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/"/>
     <url>/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/</url>
@@ -279,6 +250,60 @@
     <url>/2021/09/10/MySQL%20Having%E5%AD%90%E5%8F%A5/</url>
     
     <content type="html"><![CDATA[<h1 id="MySQL-Having子句"><a href="#MySQL-Having子句" class="headerlink" title="MySQL Having子句"></a>MySQL Having子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 Group by 後的條件判斷,用於過濾資料</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>      ..<br><span class="hljs-keyword">from</span><br>     ..<br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <br>     .. <br><span class="hljs-keyword">having</span><br>     ..;<br>條件<br></code></pre></td></tr></table></figure><br>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL Order by子句</title>
+    <link href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-Order-by子句"><a href="#MySQL-Order-by子句" class="headerlink" title="MySQL Order by子句"></a>MySQL Order by子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於資料排序</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     .. <br><span class="hljs-keyword">from</span><br>     ..<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span><br>    欄位名<span class="hljs-number">1</span><span class="hljs-operator">|</span>別名<span class="hljs-number">1</span><span class="hljs-operator">|</span>欄位序<span class="hljs-number">1</span><span class="hljs-operator">|</span>運算式<span class="hljs-number">1</span> [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>], ..,<br>    欄位名N<span class="hljs-operator">|</span>別名N<span class="hljs-operator">|</span>欄位序N<span class="hljs-operator">|</span>運算式N [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>];<br></code></pre></td></tr></table></figure><blockquote><p>asc : 遞增</p></blockquote><blockquote><p>desc: 遞減</p></blockquote><br>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL From子句</title>
+    <link href="/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20From%E5%AD%90%E5%8F%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-From子句"><a href="#MySQL-From子句" class="headerlink" title="MySQL From子句"></a>MySQL From子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於 select 後用來表達資料來源的子句 ，可以是Table、View、子查詢 </p></blockquote><blockquote><p>From 來自多重資料則需使用 join .. on 做資料連結</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     ..<br><span class="hljs-keyword">from</span><br>     資料來源<span class="hljs-number">1</span> [[<span class="hljs-keyword">as</span>] 別名<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><h3 id="Join-多重資料連結"><a href="#Join-多重資料連結" class="headerlink" title="Join (多重資料連結)"></a>Join (多重資料連結)</h3><br><ul><li>相等連結(Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-comment">-- 範例-select敘述-from子句-equal join</span><br><span class="hljs-comment">-- Equal Join: on語法後有等於運算子</span><br><span class="hljs-comment">-- 若有一DEPTNO之值只在Table EMP或DEPT出現， -- 連結後該筆資料不會出現!!</span><br><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>不相等連結(Non-Equal Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>    e.EMPNO, e.ENAME, e.SAL<br><span class="hljs-keyword">from</span><br>    EMP e<br>        <span class="hljs-keyword">join</span><br>    SAL_LEVEL s <span class="hljs-keyword">ON</span> e.SAL <span class="hljs-keyword">between</span> s.SAL_MIN <span class="hljs-keyword">and</span> s.SAL_MAX<br></code></pre></td></tr></table></figure></li></ul><br><ul><li>左側連結(Left Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p>以左邊的資料為主，即使沒有交集也會有左邊的資料</p></blockquote></li></ul><br><ul><li>右側連結(Right Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e.ENAME,<br>     d.DNAME <br><span class="hljs-keyword">from</span><br>    EMP e,<br>     <span class="hljs-keyword">right</span> <span class="hljs-keyword">join</span> DEPT d<br>          <span class="hljs-keyword">on</span> e.DEPTNO <span class="hljs-operator">=</span> d.DEPTNO<br></code></pre></td></tr></table></figure><blockquote><p> 以右邊的資料為主，即使沒有交集也會有右邊的資料</p></blockquote></li></ul><br><ul><li>自我連結(Self Join)<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     e1.ENAME,<br>     e2.ENAME <span class="hljs-keyword">as</span> MGR_NAME<br><span class="hljs-keyword">from</span><br>     EMP e1<br>     <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> EMP e2<br>          <span class="hljs-keyword">on</span> e1.MGR <span class="hljs-operator">=</span> e2.EMPNO<br></code></pre></td></tr></table></figure></li></ul>]]></content>
     
     
     <categories>
