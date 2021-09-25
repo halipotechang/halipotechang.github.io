@@ -4,11 +4,61 @@
   
   
   <entry>
+    <title>JAVA 字串</title>
+    <link href="/2021/09/25/JAVA%20%E5%AD%97%E4%B8%B2/"/>
+    <url>/2021/09/25/JAVA%20%E5%AD%97%E4%B8%B2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="JAVA-字串"><a href="#JAVA-字串" class="headerlink" title="JAVA 字串"></a>JAVA 字串</h1><h2 id="不可變特性"><a href="#不可變特性" class="headerlink" title="不可變特性"></a>不可變特性</h2><br><p>String一旦宣告後，即不能在原所在記憶體位置改變字串內容</p><p>使用String類別任何方法時，傳回的字串都會放在新的記憶體空間</p><br><h2 id="宣告方式"><a href="#宣告方式" class="headerlink" title="宣告方式"></a>宣告方式</h2><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">String s1 = <span class="hljs-keyword">new</span> String(“Hello”);<br></code></pre></td></tr></table></figure><blockquote><p>有自己的獨立記憶體空間</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">String s1 = “Hello”;<br></code></pre></td></tr></table></figure><blockquote><p>Java會把此類字串放在字串池(String Pool)</p></blockquote><blockquote><p>程式裡若有多個變數，都使用相同的字串常數，則均會使用相同的記憶體空間(即字串池String Pool)</p></blockquote><br><h2 id="字串比較"><a href="#字串比較" class="headerlink" title="字串比較"></a>字串比較</h2><br><p>比較字串內容時，並非使用==，因為==在Java字串中，比較的是記憶體位址，<br>而不是內容</p><h3 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h3><p><code>public boolean equals(Object anObject)</code></p><h3 id="範例："><a href="#範例：" class="headerlink" title="範例："></a>範例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">String s1 = “Hello”;<br>String s2 = “Hello”;<br>System.out.println(s1.equals(s2));   <span class="hljs-comment">// true </span><br></code></pre></td></tr></table></figure><br><h2 id="String常用方法"><a href="#String常用方法" class="headerlink" title="String常用方法"></a>String常用方法</h2><br><ul><li><p>public char <code>charAt(int index)</code>:透過索引值取得字串內某一個字元(注意字元位置是從0開始算起)</p></li><li><p>public int <code>length()</code>:傳回字串長度(注意空白也算進去)</p></li><li><p> public boolean <code>isEmpty()</code>:如果字串長度為0，則回傳true，否則回傳false (JDK 6.0新增方法)</p></li><li><p>public String <code>substring(int beginIndex)</code>:擷取從開始索引值的字元至結尾字元的字串</p></li><li><p>public String <code>substring(int beginIndex, int endIndex)</code>: 擷取從開始索引值的字元至結束索引值的字元之間的字串</p></li><li><p>public int <code>compareTo(String anotherString)</code>:比較的方式是由左至右，依照字元ASCII值比較大小</p></li><li><p>public String <code>trim()</code>: 開頭和結尾的空格省略(被去除)</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>JAVA SE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL Index</title>
+    <link href="/2021/09/23/MySQL%20Index/"/>
+    <url>/2021/09/23/MySQL%20Index/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-Index"><a href="#MySQL-Index" class="headerlink" title="MySQL Index"></a>MySQL Index</h1><h2 id="簡述"><a href="#簡述" class="headerlink" title="簡述"></a>簡述</h2><br><p>針對Table的一個或多個欄位索引增加搜資料尋效率</p><p>會以平衡樹(B-Tree)結構儲存</p><p>執行DQL時: 透過Index查詢，效能會明顯提升</p><p>執行DML時: 資料異動時，由於底層要重建Index，效能會下降</p><br><h2 id="Index種類"><a href="#Index種類" class="headerlink" title="Index種類"></a>Index種類</h2><ul><li><p>一般索引: </p><ul><li>僅用來加速查詢，無其他特性。建立外來鍵(Foreign Key)時，就會自動建立一般索引</li></ul></li><li><p>唯一索引: </p><ul><li>對應的欄位之值不可重複。建立唯一鍵(Unique Key)時， 就會自動建立唯一索引</li></ul></li><li><p>主要索引:</p><ul><li>對應的欄位之值不可重複、不能是null，且只能有一個。建立主要鍵(Primary Key)時，就會自動建立主要索引</li></ul></li><li><p>複合索引:</p><ul><li>由2個以上欄位組成的索引，即是複合索引。上述提到的 索引皆可以是複合索引</li></ul></li></ul><h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><ul><li><p>新建Index</p><ul><li>create index</li></ul></li></ul><pre><code><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> [<span class="hljs-keyword">unique</span>] index 索引名 <br><span class="hljs-keyword">on</span> 資料表名(<br>    欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>],<br>     ..,<br>    欄位名N[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure>&gt; index名命名習慣: IDX_資料表名_欄位名- create table with index- alter table with index</code></pre><ul><li>移除Index</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JAVA 陣列</title>
     <link href="/2021/09/23/JAVA%20%E9%99%A3%E5%88%97/"/>
     <url>/2021/09/23/JAVA%20%E9%99%A3%E5%88%97/</url>
     
-    <content type="html"><![CDATA[<h1 id="JAVA-陣列"><a href="#JAVA-陣列" class="headerlink" title="JAVA 陣列"></a>JAVA 陣列</h1><p>陣列是由一群相同資料型態的變數所組成的一種資料結構</p><p>陣列也是一種Reference資料型態</p><p>陣列的指定運算，也是傳遞陣列的記憶體位址(memory address)</p><br><h2 id="陣列宣告"><a href="#陣列宣告" class="headerlink" title="陣列宣告"></a>陣列宣告</h2><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 方法一</span><br><span class="hljs-keyword">int</span> x[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>]; x[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>;<br>x[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>;<br>x[<span class="hljs-number">2</span>] = <span class="hljs-number">30</span>;<br><br><br><span class="hljs-comment">//方法二</span><br><span class="hljs-keyword">int</span> x[] = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>&#125;;<br></code></pre></td></tr></table></figure><br><h2 id="陣列的屬性"><a href="#陣列的屬性" class="headerlink" title="陣列的屬性"></a>陣列的屬性</h2><br><ul><li><p>取得陣列的長度</p><ul><li>語法: <code>陣列名稱.length</code></li></ul><blockquote><p>一維陣列為元素個數，二維陣列為列數</p></blockquote></li></ul><br><h2 id="陣列宣告的預設初始值"><a href="#陣列宣告的預設初始值" class="headerlink" title="陣列宣告的預設初始值"></a>陣列宣告的預設初始值</h2><br><table><thead><tr><th align="center">資料型態</th><th align="center">值</th></tr></thead><tbody><tr><td align="center">byte</td><td align="center">0</td></tr><tr><td align="center">short</td><td align="center">0</td></tr><tr><td align="center">int</td><td align="center">0</td></tr><tr><td align="center">long</td><td align="center">0L</td></tr><tr><td align="center">float</td><td align="center">0.0F</td></tr><tr><td align="center">double</td><td align="center">0.0</td></tr><tr><td align="center">boolean</td><td align="center">false</td></tr><tr><td align="center">char</td><td align="center">‘ ‘</td></tr><tr><td align="center">class</td><td align="center">null</td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h1 id="JAVA-陣列"><a href="#JAVA-陣列" class="headerlink" title="JAVA 陣列"></a>JAVA 陣列</h1><p>陣列是由一群相同資料型態的變數所組成的一種資料結構</p><p>陣列也是一種Reference資料型態</p><p>陣列的指定運算，也是傳遞陣列的記憶體位址(memory address)</p><br><h2 id="陣列宣告"><a href="#陣列宣告" class="headerlink" title="陣列宣告"></a>陣列宣告</h2><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 方法一</span><br><span class="hljs-keyword">int</span> x[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>]; <br>x[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>;<br>x[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>;<br>x[<span class="hljs-number">2</span>] = <span class="hljs-number">30</span>;<br><br><br><span class="hljs-comment">//方法二</span><br><span class="hljs-keyword">int</span> x[] = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>&#125;;<br></code></pre></td></tr></table></figure><br><h2 id="陣列的屬性"><a href="#陣列的屬性" class="headerlink" title="陣列的屬性"></a>陣列的屬性</h2><br><ul><li><p>取得陣列的長度</p><ul><li>語法: <code>陣列名稱.length</code></li></ul><blockquote><p>一維陣列為元素個數，二維陣列為列數</p></blockquote></li></ul><br><h2 id="陣列宣告的預設初始值"><a href="#陣列宣告的預設初始值" class="headerlink" title="陣列宣告的預設初始值"></a>陣列宣告的預設初始值</h2><br><table><thead><tr><th align="center">資料型態</th><th align="center">值</th></tr></thead><tbody><tr><td align="center">byte</td><td align="center">0</td></tr><tr><td align="center">short</td><td align="center">0</td></tr><tr><td align="center">int</td><td align="center">0</td></tr><tr><td align="center">long</td><td align="center">0L</td></tr><tr><td align="center">float</td><td align="center">0.0F</td></tr><tr><td align="center">double</td><td align="center">0.0</td></tr><tr><td align="center">boolean</td><td align="center">false</td></tr><tr><td align="center">char</td><td align="center">‘ ‘</td></tr><tr><td align="center">class</td><td align="center">null</td></tr></tbody></table><br><h2 id="陣列的排序"><a href="#陣列的排序" class="headerlink" title="陣列的排序:"></a>陣列的排序:</h2><br><p><code>Arrays.sort(欲排序的陣列名稱)</code></p><p>可讓該陣列元素由小到大排序</p><br><h2 id="陣列的搜尋"><a href="#陣列的搜尋" class="headerlink" title="陣列的搜尋:"></a>陣列的搜尋:</h2><br><p><code>Arrays.binarySearch(陣列名稱, 欲搜索的值)</code></p><p>使用二分搜索法，搜索陣列內某個值的位置 (回傳int)<br>執行搜索前，必須先將該陣列排序，如果欲搜尋的值不在該陣列裡，則回傳負值</p><br><h2 id="陣列的複製"><a href="#陣列的複製" class="headerlink" title="陣列的複製:"></a>陣列的複製:</h2><br><p><code>Arrays.copyOf(欲複製的陣列名稱，複製的長度)</code></p><p>複製出的新陣列可以不用預先初始化(不用new)，直接回傳(複製出)一個新的陣列</p>]]></content>
     
     
     <categories>

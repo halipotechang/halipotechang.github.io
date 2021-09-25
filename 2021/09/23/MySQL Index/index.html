@@ -18,9 +18,25 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>Li&#39;s Blog</title>
+  <title>MySQL Index - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,17 +163,50 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Li's Blog">
+            <span class="h2" id="subtitle" title="MySQL Index">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-23 18:46" pubdate>
+        2021年9月23日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      284 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -166,235 +215,145 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/" target="_self">
-          HTML 圖片、多媒體標籤
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/" target="_self">
-          
-          
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">MySQL Index</h1>
             
-          
-          HTML 圖片、多媒體標籤圖片
+            <div class="markdown-body">
+              <h1 id="MySQL-Index"><a href="#MySQL-Index" class="headerlink" title="MySQL Index"></a>MySQL Index</h1><h2 id="簡述"><a href="#簡述" class="headerlink" title="簡述"></a>簡述</h2><br>
 
+<p>針對Table的一個或多個欄位索引增加搜資料尋效率</p>
+<p>會以平衡樹(B-Tree)結構儲存</p>
+<p>執行DQL時: 透過Index查詢，效能會明顯提升</p>
+<p>執行DML時: 資料異動時，由於底層要重建Index，效能會下降</p>
+<br>
 
-&lt;img&gt; 顯示圖片標籤
+<h2 id="Index種類"><a href="#Index種類" class="headerlink" title="Index種類"></a>Index種類</h2><ul>
+<li><p>一般索引: </p>
+<ul>
+<li>僅用來加速查詢，無其他特性。建立外來鍵(Foreign Key)時，就會自動建立一般索引</li>
+</ul>
+</li>
+<li><p>唯一索引: </p>
+<ul>
+<li>對應的欄位之值不可重複。建立唯一鍵(Unique Key)時， 就會自動建立唯一索引</li>
+</ul>
+</li>
+<li><p>主要索引:</p>
+<ul>
+<li>對應的欄位之值不可重複、不能是null，且只能有一個。建立主要鍵(Primary Key)時，就會自動建立主要索引</li>
+</ul>
+</li>
+<li><p>複合索引:</p>
+<ul>
+<li>由2個以上欄位組成的索引，即是複合索引。上述提到的 索引皆可以是複合索引</li>
+</ul>
+</li>
+</ul>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><ul>
+<li><p>新建Index</p>
+<ul>
+<li>create index</li>
+</ul>
+</li>
+</ul>
+<pre><code><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> [<span class="hljs-keyword">unique</span>] index 索引名 <br><span class="hljs-keyword">on</span> 資料表名(<br>    欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>],<br>     ..,<br>    欄位名N[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure>
+&gt; index名命名習慣: IDX_資料表名_欄位名
 
-
-
-1&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;
-
-src=””  為圖片來源 
-
-
-alt=””   為替代文字
-
-多媒體
-
-
-&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。
-1&lt;embed src=&quot;&quot; type=&quot;&
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-07 20:00" pubdate>
-              2021-09-07
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/HTML/">HTML</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/HTML/">HTML</a>
-            
-              <a href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/" target="_self">
-          HTML 表單標籤
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/07/HTML%20%E8%A1%A8%E5%96%AE%E6%A8%99%E7%B1%A4/" target="_self">
-          
-          
-            
-          
-          HTML 表格標籤
-
-
-&lt;table&gt;  表單的範圍
-
-&lt;fieldset&gt;  表單欄位的所有集結區域
-
-&lt;legend&gt;  表單的標題
-
-&lt;input&gt;  表單單行文字欄位
-
-&lt;textarea&gt; 表單多行文字欄位
-
-&lt;button&gt;  表單按鈕
-
-
-範例：
-123456789&lt;form action=&quot;&q
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-07 20:00" pubdate>
-              2021-09-07
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/HTML/">HTML</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/HTML/">HTML</a>
-            
-              <a href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/" target="_self">
-          HTML 語意標籤
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/07/HTML%20%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4/" target="_self">
-          
-          
-            
-          
-          HTML語意標籤
-
-
-HTML5新標籤最大的目的是讓搜尋引擎或是其他軟體工具，可以更清楚的了解網頁中每個區塊的設計目的。
+- create table with index
 
 
 
 
-article | 文字範圍 
-aside | 側邊欄 
-details | 可看見或隱藏的詳細資訊 
-summary | 針對details定義一個可視的說明
-figcaption | 獨立內容區段 通常figure一起使用 
-figure | 獨立內容區段 針對影像
-        </a>
-      </p>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-07 20:00" pubdate>
-              2021-09-07
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/HTML/">HTML</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/HTML/">HTML</a>
-            
-              <a href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
+- alter table with index
+</code></pre>
+<ul>
+<li>移除Index</li>
+</ul>
 
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span>
-    </span>
-  </nav>
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/MySQL/">MySQL</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特別聲明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW" rel="nofollow noopener noopener">CC BY-SA 4.0 </a>協議
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/25/JAVA%20%E5%AD%97%E4%B8%B2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JAVA 字串</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/23/JAVA%20%E9%99%A3%E5%88%97/">
+                        <span class="hidden-mobile">JAVA 陣列</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -474,9 +433,15 @@ figure | 獨立內容區段 針對影像
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 

@@ -182,6 +182,146 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/09/14/MySQL%20DDL/" target="_self">
+          MySQL DDL
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/14/MySQL%20DDL/" target="_self">
+          
+          
+            
+          
+          MySQL DDL簡述
+
+
+Data Definition Language，資料定義語言
+用以維護資料庫內的物件
+資料庫常見物件: Table、View、Index..等
+
+
+
+敘述
+create: 新建物件
+drop: 移除物件
+alter: 修改物件
+truncate: 截斷物件
+
+
+
+create table (新增Table)
+
+語法：1234create table 資料表名(各欄位定
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-14 09:01" pubdate>
+              2021-09-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/MySQL/">MySQL</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MySQL/">MySQL</a>
+            
+              <a href="/tags/SQL/">SQL</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/13/MySQL%20DCL/" target="_self">
+          MySQL DCL
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/13/MySQL%20DCL/" target="_self">
+          
+          
+            
+          
+          MySQL TCL (交易控制語言)說明
+
+
+用以控制資料庫中的交易
+MySQL只有InnoDB引擎支援交易控制
+
+敘述
+
+
+set autocommit: 啟用/停用交易控制模式。是全局設定，之後的所有敘述都會受影響
+
+
+0 / off:啟用交易控制模式 1 / on:停用交易控制模式(預設)
+
+
+start transaction: 開啟單一交易控制。只有當前範圍內敘述會受影響
+
+commit
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-13 21:36" pubdate>
+              2021-09-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/MySQL/">MySQL</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MySQL/">MySQL</a>
+            
+              <a href="/tags/SQL/">SQL</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/09/13/MySQL%20DML/" target="_self">
           MySQL DML
         </a>
@@ -704,188 +844,6 @@ Join (多重資料連結)
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2021-09-10 20:32" pubdate>
-              2021-09-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/MySQL/">MySQL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/MySQL/">MySQL</a>
-            
-              <a href="/tags/SQL/">SQL</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Order by子句
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          
-          
-            
-          
-          MySQL Order by子句用途：
-
-
-用於資料排序
-
-
-
-語法：
-
-1234567select     .. from     ..order by    欄位名1|別名1|欄位序1|運算式1 [asc|desc], ..,    欄位名N|別名N|欄位序N|運算式N [asc|desc];
-
-asc : 遞增
-
-
-desc: 遞減
-
-
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-10 20:32" pubdate>
-              2021-09-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/MySQL/">MySQL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/MySQL/">MySQL</a>
-            
-              <a href="/tags/SQL/">SQL</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/10/MySQL%20Where%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Where子句
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Where%E5%AD%90%E5%8F%A5/" target="_self">
-          
-          
-            
-          
-          MySQL Where子句用途：
-
-
-用於條件判斷，過濾資料
-
-
-
-語法：
-
-123456select..from     表格名 where     條件
-
-
-
-比較運算子
-
-
-
-
-運算元
-語意
-
-
-
-=
-等於
-
-
-&gt;
-大於
-
-
-&gt;=
-大於或等於
-
-
-&lt;
-小於
-
-
-&lt;=
-小於或等於
-
-
-!=
-不等於
-
-
-
-
-邏輯運算子
-
-
-
-
-運算元
-語意
-
-
-
-and
-且 (&amp;
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-10 19:54" pubdate>
               2021-09-10
             </time>
           </div>

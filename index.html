@@ -182,6 +182,139 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/09/25/JAVA%20%E5%AD%97%E4%B8%B2/" target="_self">
+          JAVA 字串
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/25/JAVA%20%E5%AD%97%E4%B8%B2/" target="_self">
+          
+          
+            
+          
+          JAVA 字串不可變特性
+
+String一旦宣告後，即不能在原所在記憶體位置改變字串內容
+使用String類別任何方法時，傳回的字串都會放在新的記憶體空間
+
+
+宣告方式
+
+1String s1 = new String(“Hello”);
+
+有自己的獨立記憶體空間
+
+1String s1 = “Hello”;
+
+Java會把此類字串放在字串池(String Pool)
+
+
+程式裡若有多個變數，都使
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-25 09:03" pubdate>
+              2021-09-25
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/JAVA-SE/">JAVA SE</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JAVA/">JAVA</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/23/MySQL%20Index/" target="_self">
+          MySQL Index
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/23/MySQL%20Index/" target="_self">
+          
+          
+            
+          
+          MySQL Index簡述
+
+針對Table的一個或多個欄位索引增加搜資料尋效率
+會以平衡樹(B-Tree)結構儲存
+執行DQL時: 透過Index查詢，效能會明顯提升
+執行DML時: 資料異動時，由於底層要重建Index，效能會下降
+
+
+Index種類
+一般索引: 
+
+僅用來加速查詢，無其他特性。建立外來鍵(Foreign Key)時，就會自動建立一般索引
+
+
+唯一索引: 
+
+對應的欄位之值不可
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-23 18:46" pubdate>
+              2021-09-23
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/MySQL/">MySQL</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MySQL/">MySQL</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/09/23/JAVA%20%E9%99%A3%E5%88%97/" target="_self">
           JAVA 陣列
         </a>
@@ -200,7 +333,7 @@
 
 陣列宣告
 
-12345678// 方法一int x[] = new int[3]; x[0] = 10;x[1] = 20;x[2] = 30;//方法二int x[] = &#123;10, 20, 30&#125
+123456789// 方法一int x[] = new int[3]; x[0] = 10;x[1] = 20;x[2] = 30;//方法二int x[] = &#123;10, 20, 30&#12
         </a>
       </p>
 
@@ -732,146 +865,6 @@ a = a - 1
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/JAVA/">JAVA</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/14/MySQL%20DDL/" target="_self">
-          MySQL DDL
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/14/MySQL%20DDL/" target="_self">
-          
-          
-            
-          
-          MySQL DDL簡述
-
-
-Data Definition Language，資料定義語言
-用以維護資料庫內的物件
-資料庫常見物件: Table、View、Index..等
-
-
-
-敘述
-create: 新建物件
-drop: 移除物件
-alter: 修改物件
-truncate: 截斷物件
-
-
-
-create table (新增Table)
-
-語法：1234create table 資料表名(各欄位定
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-14 09:01" pubdate>
-              2021-09-14
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/MySQL/">MySQL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/MySQL/">MySQL</a>
-            
-              <a href="/tags/SQL/">SQL</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/13/MySQL%20DCL/" target="_self">
-          MySQL DCL
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/13/MySQL%20DCL/" target="_self">
-          
-          
-            
-          
-          MySQL TCL (交易控制語言)說明
-
-
-用以控制資料庫中的交易
-MySQL只有InnoDB引擎支援交易控制
-
-敘述
-
-
-set autocommit: 啟用/停用交易控制模式。是全局設定，之後的所有敘述都會受影響
-
-
-0 / off:啟用交易控制模式 1 / on:停用交易控制模式(預設)
-
-
-start transaction: 開啟單一交易控制。只有當前範圍內敘述會受影響
-
-commit
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-13 21:36" pubdate>
-              2021-09-13
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/MySQL/">MySQL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/MySQL/">MySQL</a>
-            
-              <a href="/tags/SQL/">SQL</a>
             
           </div>
         

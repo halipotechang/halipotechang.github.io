@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      161 字
+      310 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      3
        分钟
     </span>
   
@@ -235,7 +235,7 @@
 
 <h2 id="陣列宣告"><a href="#陣列宣告" class="headerlink" title="陣列宣告"></a>陣列宣告</h2><br>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 方法一</span><br><span class="hljs-keyword">int</span> x[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>]; x[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>;<br>x[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>;<br>x[<span class="hljs-number">2</span>] = <span class="hljs-number">30</span>;<br><br><br><span class="hljs-comment">//方法二</span><br><span class="hljs-keyword">int</span> x[] = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 方法一</span><br><span class="hljs-keyword">int</span> x[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>]; <br>x[<span class="hljs-number">0</span>] = <span class="hljs-number">10</span>;<br>x[<span class="hljs-number">1</span>] = <span class="hljs-number">20</span>;<br>x[<span class="hljs-number">2</span>] = <span class="hljs-number">30</span>;<br><br><br><span class="hljs-comment">//方法二</span><br><span class="hljs-keyword">int</span> x[] = &#123;<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>&#125;;<br></code></pre></td></tr></table></figure>
 
 <br>
 
@@ -299,6 +299,24 @@
 <td align="center">null</td>
 </tr>
 </tbody></table>
+<br>
+
+<h2 id="陣列的排序"><a href="#陣列的排序" class="headerlink" title="陣列的排序:"></a>陣列的排序:</h2><br>
+
+<p><code>Arrays.sort(欲排序的陣列名稱)</code></p>
+<p>可讓該陣列元素由小到大排序</p>
+<br>
+
+<h2 id="陣列的搜尋"><a href="#陣列的搜尋" class="headerlink" title="陣列的搜尋:"></a>陣列的搜尋:</h2><br>
+
+<p><code>Arrays.binarySearch(陣列名稱, 欲搜索的值)</code></p>
+<p>使用二分搜索法，搜索陣列內某個值的位置 (回傳int)<br>執行搜索前，必須先將該陣列排序，如果欲搜尋的值不在該陣列裡，則回傳負值</p>
+<br>
+
+<h2 id="陣列的複製"><a href="#陣列的複製" class="headerlink" title="陣列的複製:"></a>陣列的複製:</h2><br>
+
+<p><code>Arrays.copyOf(欲複製的陣列名稱，複製的長度)</code></p>
+<p>複製出的新陣列可以不用預先初始化(不用new)，直接回傳(複製出)一個新的陣列</p>
 
             </div>
             <hr>
@@ -332,6 +350,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/09/23/MySQL%20Index/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MySQL Index</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
