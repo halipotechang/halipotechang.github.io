@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      364 字
+      363 字
     </span>
   
 
@@ -258,25 +258,26 @@
 </ul>
 </li>
 </ul>
-<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><ul>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><br>
+
+<ul>
 <li><p>新建Index</p>
 <ul>
 <li>create index</li>
 </ul>
-</li>
-</ul>
-<pre><code><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> [<span class="hljs-keyword">unique</span>] index 索引名 <br><span class="hljs-keyword">on</span> 資料表名(<br>    欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>],<br>     ..,<br>    欄位名N[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure>
-&gt; index名命名習慣: IDX_資料表名_欄位名
-
-- create table with index
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> 資料表名(<br>    ..各欄位定義<br>    [<span class="hljs-keyword">unique</span>] &#123;index <span class="hljs-operator">|</span> key&#125; 索引名( 欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure>
-
-- alter table with index
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> 資料表名<br><span class="hljs-keyword">add</span> [<span class="hljs-keyword">unique</span>] &#123;index <span class="hljs-operator">|</span> key&#125; 索引名(<br>        欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure>
-</code></pre>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> [<span class="hljs-keyword">unique</span>] index 索引名 <br><span class="hljs-keyword">on</span> 資料表名(<br>    欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>],<br>     ..,<br>    欄位名N[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>index名命名習慣: IDX_資料表名_欄位名</p>
+</blockquote>
 <ul>
+<li>create table with index</li>
+</ul>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> 資料表名(<br>    ..各欄位定義<br>    [<span class="hljs-keyword">unique</span>] &#123;index <span class="hljs-operator">|</span> key&#125; 索引名( 欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>alter table with index</li>
+</ul>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> 資料表名<br><span class="hljs-keyword">add</span> [<span class="hljs-keyword">unique</span>] &#123;index <span class="hljs-operator">|</span> key&#125; 索引名(<br>        欄位名<span class="hljs-number">1</span>[長度] [<span class="hljs-keyword">asc</span> <span class="hljs-operator">|</span> <span class="hljs-keyword">desc</span>])<br></code></pre></td></tr></table></figure></li>
 <li><p>移除Index</p>
 <ul>
 <li>drop index</li>
