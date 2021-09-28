@@ -108,7 +108,7 @@
     <link href="/2021/09/27/%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88%20%E6%A6%82%E6%83%B3%E8%B3%87%E6%96%99%E6%A8%A1%E5%9E%8B/"/>
     <url>/2021/09/27/%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88%20%E6%A6%82%E6%83%B3%E8%B3%87%E6%96%99%E6%A8%A1%E5%9E%8B/</url>
     
-    <content type="html"><![CDATA[<h1 id="資料庫設計-概想資料模型"><a href="#資料庫設計-概想資料模型" class="headerlink" title="資料庫設計 概想資料模型"></a>資料庫設計 概想資料模型</h1><h2 id="ER-Model"><a href="#ER-Model" class="headerlink" title="ER Model"></a>ER Model</h2><br><ul><li>實體—關係模型 (Entity-Relationship model)</li><li>是一種概想資料模型</li><li>目前大都用在資料庫的設計過程中</li><li>P. Chen在1976年提出</li></ul><h2 id="ER-模型的符號"><a href="#ER-模型的符號" class="headerlink" title="ER 模型的符號"></a>ER 模型的符號</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="資料庫設計-概想資料模型"><a href="#資料庫設計-概想資料模型" class="headerlink" title="資料庫設計 概想資料模型"></a>資料庫設計 概想資料模型</h1><h2 id="ER-Model"><a href="#ER-Model" class="headerlink" title="ER Model"></a>ER Model</h2><br><ul><li>實體—關係模型 (Entity-Relationship model)</li><li>是一種概想資料模型</li><li>目前大都用在資料庫的設計過程中</li><li>P. Chen在1976年提出</li></ul><br><h2 id="ER-模型的符號"><a href="#ER-模型的符號" class="headerlink" title="ER 模型的符號"></a>ER 模型的符號</h2><br><p><img src="/2021/09/27/%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88%20%E6%A6%82%E6%83%B3%E8%B3%87%E6%96%99%E6%A8%A1%E5%9E%8B/img1.jpg" alt=" "></p><br><ul><li><p>實體</p><ul><li><p>ER Model裡的基本個體</p></li><li><p>例如:汽車、房子、員工…..</p></li></ul></li></ul><ul><li><p>屬性</p><ul><li><p>描述實體的性質</p></li><li><p>實體裡每個屬性都有個值，稱之為屬性值</p></li><li><p>屬性值是存在資料庫裡主要的資料</p></li></ul></li></ul><ul><li><p>鍵值屬性</p><ul><li><p>用來保持唯一性的性質</p></li><li><p>鍵值屬性可能不只一個</p><p>  例如:汽車的引擎號碼和牌照號碼</p></li></ul></li></ul><br><h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><br><ul><li>UML:Unified Modeling Language。</li><li>UML 是一套標準的圖形及符號，用來畫軟體藍圖。</li><li>以用UML之類別圖表現ER模型。</li></ul><p><img src="/2021/09/27/%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88%20%E6%A6%82%E6%83%B3%E8%B3%87%E6%96%99%E6%A8%A1%E5%9E%8B/er.jpg" alt=" "></p><p><img src="/2021/09/27/%E8%B3%87%E6%96%99%E5%BA%AB%E8%A8%AD%E8%A8%88%20%E6%A6%82%E6%83%B3%E8%B3%87%E6%96%99%E6%A8%A1%E5%9E%8B/UML.jpg" alt=" "></p>]]></content>
     
     
     <categories>
@@ -553,9 +553,9 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
       
     </tags>
     
@@ -850,9 +850,9 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
       
     </tags>
     
@@ -877,9 +877,9 @@
     
     <tags>
       
-      <tag>CSS</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>CSS</tag>
       
     </tags>
     
@@ -904,36 +904,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 圖片、多媒體標籤</title>
-    <link href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-圖片、多媒體標籤"><a href="#HTML-圖片、多媒體標籤" class="headerlink" title="HTML 圖片、多媒體標籤"></a>HTML 圖片、多媒體標籤</h1><h2 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h2><br><ul><li>&lt;img&gt; 顯示圖片標籤</li></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>src=””  為圖片來源 </p></blockquote><blockquote><p>alt=””   為替代文字</p></blockquote><h2 id="多媒體"><a href="#多媒體" class="headerlink" title="多媒體"></a>多媒體</h2><br><ul><li><p>&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;object&gt; 多媒體資料以object方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>data=”” 外部資源url</p></blockquote></li></ul><br><ul><li><p>&lt;video&gt; 將影片資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;audio&gt; 將聲音資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>前端開發</tag>
-      
-      <tag>HTML</tag>
       
     </tags>
     
@@ -958,9 +931,36 @@
     
     <tags>
       
+      <tag>HTML</tag>
+      
       <tag>前端開發</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 圖片、多媒體標籤</title>
+    <link href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-圖片、多媒體標籤"><a href="#HTML-圖片、多媒體標籤" class="headerlink" title="HTML 圖片、多媒體標籤"></a>HTML 圖片、多媒體標籤</h1><h2 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h2><br><ul><li>&lt;img&gt; 顯示圖片標籤</li></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>src=””  為圖片來源 </p></blockquote><blockquote><p>alt=””   為替代文字</p></blockquote><h2 id="多媒體"><a href="#多媒體" class="headerlink" title="多媒體"></a>多媒體</h2><br><ul><li><p>&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;object&gt; 多媒體資料以object方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>data=”” 外部資源url</p></blockquote></li></ul><br><ul><li><p>&lt;video&gt; 將影片資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;audio&gt; 將聲音資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -985,9 +985,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -1012,9 +1012,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -1039,9 +1039,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>HTML</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
