@@ -4,11 +4,36 @@
   
   
   <entry>
+    <title>JAVA物件導向 - 多型</title>
+    <link href="/2021/09/28/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E5%A4%9A%E5%9E%8B/"/>
+    <url>/2021/09/28/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E5%A4%9A%E5%9E%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="JAVA物件導向-多型"><a href="#JAVA物件導向-多型" class="headerlink" title="JAVA物件導向 - 多型"></a>JAVA物件導向 - 多型</h1><h2 id="型別多樣化"><a href="#型別多樣化" class="headerlink" title="型別多樣化"></a>型別多樣化</h2><br><p>只要符合類別間的繼承關係，在宣告參考變數時，子類別(位階低)物件實體可以升級成父類別(位階高) 型別表示</p><p>範例：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Employee e1 = <span class="hljs-keyword">new</span> FullTimeEmployee();<br>Employee e2 = <span class="hljs-keyword">new</span> Manager();<br>Employee e3 = <span class="hljs-keyword">new</span> PartTimeEmployee();<br></code></pre></td></tr></table></figure><br><h2 id="類別型別轉換-Cast"><a href="#類別型別轉換-Cast" class="headerlink" title="類別型別轉換(Cast)"></a>類別型別轉換(Cast)</h2><br><p>父類別參考變數若是要轉型回子類別，則需要靠強迫轉型(Cast)，但是會在執行時期檢查是否能夠轉回 適當的子類別</p><p>範例：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">FullTimeEmployee f = (FullTimeEmployee)e1;<br>Manager m = (Manager)e1;<br></code></pre></td></tr></table></figure><br><h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><br><ul><li>instanceof 運算子常被用來判斷父類別參考變數真正指向何種子類別的物件實體<ul><li>語法:物件參考變數 instanceof 類別名稱</li><li>說明:檢查左邊參考的物件是否可以轉型為右邊的類別型別，如果可以回傳true，否則為false</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>JAVA SE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JAVA</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JAVA物件導向 - 繼承</title>
     <link href="/2021/09/27/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B9%BC%E6%89%BF/"/>
     <url>/2021/09/27/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B9%BC%E6%89%BF/</url>
     
-    <content type="html"><![CDATA[<h1 id="JAVA物件導向-繼承"><a href="#JAVA物件導向-繼承" class="headerlink" title="JAVA物件導向 - 繼承"></a>JAVA物件導向 - 繼承</h1><p>一個類別可以繼承它的父類別所有狀態及行為</p><p><img src="/2021/09/27/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B9%BC%E6%89%BF/img1.jpg" alt=" "></p><br><h2 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h2><br><ul><li>繼承主要目的就是提高程式的重複使用性</li><li>子類別將會繼承到父類別中所有可以存取的成員，包括變數與方法</li><li>可以再加入新方法 (method)</li><li>也可以覆寫(override)從父類別而來的方法</li></ul><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SubClassName</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SuperClassName</span></span>&#123; &#125;<br></code></pre></td></tr></table></figure><blockquote><p>Java不支援多重繼承，一個子類別只能extends一個父類別</p></blockquote><blockquote><p>建構子(Constructor)無法被繼承</p></blockquote><blockquote><p>java.lang.Object類別為所有類別的共同父類別</p></blockquote><br><h2 id="方法覆寫"><a href="#方法覆寫" class="headerlink" title="方法覆寫"></a>方法覆寫</h2><br><h3 id="目的"><a href="#目的" class="headerlink" title="目的:"></a>目的:</h3><ul><li>子類別繼承父類別後，不滿意父類別定義的方法，子類別可以在繼承後重新改寫，即為overriding</li></ul><blockquote><p>覆寫(overriding)方法時，<code>方法名稱</code>、<code>參數個數</code>、<code>參數型別</code>與<code>回傳值</code>皆須跟父類別裡被覆寫的方法<code>相同</code></p></blockquote><blockquote><p>存取修飾子的等級不可以小於父類別方法(指可以一樣或是更加寬廣)</p></blockquote><blockquote><p>子類別覆寫父類別定義有throws的方法時，不得比父類別被覆寫方法的Exception還要高<br>階</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Father</span> </span>&#123; <br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;    <span class="hljs-comment">//失敗，private小於protected</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;            <span class="hljs-comment">//失敗，default小於protected </span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;  <span class="hljs-comment">//成功，與父類別同存取等級 </span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;     <span class="hljs-comment">//成功，大於父類別存取等級</span><br>&#125;<br></code></pre></td></tr></table></figure><br><h2 id="呼叫父類別的方法"><a href="#呼叫父類別的方法" class="headerlink" title="呼叫父類別的方法"></a>呼叫父類別的方法</h2><br><p>子類別透過 super. 可以呼叫上一層類別的方法</p><br><h2 id="呼叫父類別的建構子"><a href="#呼叫父類別的建構子" class="headerlink" title="呼叫父類別的建構子"></a>呼叫父類別的建構子</h2><br><ul><li><p>子類別透過建構子，用 super(…) 將共同的建構子參數傳給父類別 </p></li><li><p>物件產生時，建構子呼叫的順序為先父類別再子類別</p><ul><li>建構子中若有出現 super(…)，一定要放在第一個敘述位置</li><li>建構子中若未出現 super(…)，Java預設會有一個隱形的 super()</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="JAVA物件導向-繼承"><a href="#JAVA物件導向-繼承" class="headerlink" title="JAVA物件導向 - 繼承"></a>JAVA物件導向 - 繼承</h1><p>一個類別可以繼承它的父類別所有狀態及行為</p><p><img src="/2021/09/27/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B9%BC%E6%89%BF/img1.jpg" alt=" "></p><br><h2 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h2><br><ul><li>繼承主要目的就是提高程式的重複使用性</li><li>子類別將會繼承到父類別中所有可以存取的成員，包括變數與方法</li><li>可以再加入新方法 (method)</li><li>也可以覆寫(override)從父類別而來的方法</li></ul><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SubClassName</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SuperClassName</span></span>&#123; &#125;<br></code></pre></td></tr></table></figure><blockquote><p>Java不支援多重繼承，一個子類別只能extends一個父類別</p></blockquote><blockquote><p>建構子(Constructor)無法被繼承</p></blockquote><blockquote><p>java.lang.Object類別為所有類別的共同父類別</p></blockquote><br><h2 id="方法覆寫"><a href="#方法覆寫" class="headerlink" title="方法覆寫"></a>方法覆寫</h2><br><h3 id="目的"><a href="#目的" class="headerlink" title="目的:"></a>目的:</h3><ul><li>子類別繼承父類別後，不滿意父類別定義的方法，子類別可以在繼承後重新改寫，即為overriding</li></ul><blockquote><p>覆寫(overriding)方法時，<code>方法名稱</code>、<code>參數個數</code>、<code>參數型別</code>與<code>回傳值</code>皆須跟父類別裡被覆寫的方法<code>相同</code></p></blockquote><blockquote><p>存取修飾子的等級不可以小於父類別方法(指可以一樣或是更加寬廣)</p></blockquote><blockquote><p>子類別覆寫父類別定義有throws的方法時，不得比父類別被覆寫方法的Exception還要高<br>階</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Father</span> </span>&#123; <br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;    <span class="hljs-comment">//失敗，private小於protected</span><br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;            <span class="hljs-comment">//失敗，default小於protected </span><br>    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;  <span class="hljs-comment">//成功，與父類別同存取等級 </span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> </span>&#123;...&#125;     <span class="hljs-comment">//成功，大於父類別存取等級</span><br>&#125;<br></code></pre></td></tr></table></figure><br><h2 id="呼叫父類別的方法"><a href="#呼叫父類別的方法" class="headerlink" title="呼叫父類別的方法"></a>呼叫父類別的方法</h2><br><p>子類別透過 super. 可以呼叫上一層類別的方法</p><br><h2 id="呼叫父類別的建構子"><a href="#呼叫父類別的建構子" class="headerlink" title="呼叫父類別的建構子"></a>呼叫父類別的建構子</h2><br><ul><li><p>子類別透過建構子，用 super(…) 將共同的建構子參數傳給父類別 </p></li><li><p>物件產生時，建構子呼叫的順序為先父類別再子類別</p><ul><li>建構子中若<code>有出現 super(...)</code>，<code>一定要放在第一個敘述位置</code></li><li>建構子中若<code>未出現 super(...)</code>，<code>Java預設會有一個隱形的 super()</code></li></ul></li></ul>]]></content>
     
     
     <categories>
@@ -528,9 +553,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -825,9 +850,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -852,9 +877,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -879,36 +904,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
       
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 其他標籤</title>
-    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
       <tag>HTML</tag>
-      
-      <tag>前端開發</tag>
       
     </tags>
     
@@ -933,9 +931,36 @@
     
     <tags>
       
+      <tag>前端開發</tag>
+      
       <tag>HTML</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 其他標籤</title>
+    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -960,9 +985,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -987,9 +1012,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -1014,9 +1039,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
