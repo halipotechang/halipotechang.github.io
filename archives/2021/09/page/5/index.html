@@ -18,25 +18,9 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>JAVA物件導向 - 多型 - Li&#39;s Blog</title>
+  <title>封存 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
 
 
 
@@ -64,7 +48,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -163,46 +147,9 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="JAVA物件導向 - 多型">
+            <span class="h2" id="subtitle" title="封存">
               
             </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-28 14:38" pubdate>
-        2021年9月28日 下午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      216 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      2
-       分钟
-    </span>
-  
-
-  
-  
-</div>
 
             
           </div>
@@ -215,119 +162,46 @@
 
   <main>
     
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">總共 41 篇文章</p>
+  <hr>
+  
+  
+    
       
+      <p class="h5">2021</p>
+    
+    <a href="/2021/09/07/HTML%20%E8%A1%A8%E6%A0%BC%E6%A8%99%E7%B1%A4/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">HTML 表格標籤</span>
+      <time style="float: right;">09-07</time>
+    </a>
+  
+</div>
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">JAVA物件導向 - 多型</h1>
-            
-            <div class="markdown-body">
-              <h1 id="JAVA物件導向-多型"><a href="#JAVA物件導向-多型" class="headerlink" title="JAVA物件導向 - 多型"></a>JAVA物件導向 - 多型</h1><h2 id="型別多樣化"><a href="#型別多樣化" class="headerlink" title="型別多樣化"></a>型別多樣化</h2><br>
 
-<p>只要符合類別間的繼承關係，在宣告參考變數時，子類別(位階低)物件實體可以升級成父類別(位階高) 型別表示</p>
-<p>範例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Employee e1 = <span class="hljs-keyword">new</span> FullTimeEmployee();<br>Employee e2 = <span class="hljs-keyword">new</span> Manager();<br>Employee e3 = <span class="hljs-keyword">new</span> PartTimeEmployee();<br></code></pre></td></tr></table></figure>
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/archives/2021/09/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2021/09/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/09/page/3/#board">3</a><a class="page-number" href="/archives/2021/09/page/4/#board">4</a><span class="page-number current">5</span>
+    </span>
+  </nav>
 
-<br>
 
-<h2 id="類別型別轉換-Cast"><a href="#類別型別轉換-Cast" class="headerlink" title="類別型別轉換(Cast)"></a>類別型別轉換(Cast)</h2><br>
 
-<p>父類別參考變數若是要轉型回子類別，則需要靠強迫轉型(Cast)，但是會在執行時期檢查是否能夠轉回 適當的子類別</p>
-<p>範例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">FullTimeEmployee f = (FullTimeEmployee)e1;<br>Manager m = (Manager)e1;<br></code></pre></td></tr></table></figure>
 
-<br>
-
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><br>
-
-<ul>
-<li>instanceof 運算子常被用來判斷父類別參考變數真正指向何種子類別的物件實體<ul>
-<li>語法:物件參考變數 instanceof 類別名稱</li>
-<li>說明:檢查左邊參考的物件是否可以轉型為右邊的類別型別，如果可以回傳true，否則為false</li>
-</ul>
-</li>
-</ul>
-
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/JAVA-SE/">JAVA SE</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/JAVA/">JAVA</a>
-                    
-                  </div>
-                
               </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特別聲明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh_TW" rel="nofollow noopener noopener">CC BY-SA 4.0 </a>協議
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/09/30/JAVA%20%E6%8A%BD%E8%B1%A1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JAVA 抽象</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/09/27/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B9%BC%E6%89%BF/">
-                        <span class="hidden-mobile">JAVA物件導向 - 繼承</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目錄</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
     
 
     
@@ -407,15 +281,9 @@
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 

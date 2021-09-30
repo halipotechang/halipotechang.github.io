@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>JAVA物件導向 - 多型 - Li&#39;s Blog</title>
+  <title>JAVA 抽象 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="JAVA物件導向 - 多型">
+            <span class="h2" id="subtitle" title="JAVA 抽象">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-28 14:38" pubdate>
-        2021年9月28日 下午
+      <time datetime="2021-09-30 09:32" pubdate>
+        2021年9月30日 上午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      216 字
+      175 字
     </span>
   
 
@@ -225,35 +225,29 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JAVA物件導向 - 多型</h1>
+            <h1 style="display: none">JAVA 抽象</h1>
             
             <div class="markdown-body">
-              <h1 id="JAVA物件導向-多型"><a href="#JAVA物件導向-多型" class="headerlink" title="JAVA物件導向 - 多型"></a>JAVA物件導向 - 多型</h1><h2 id="型別多樣化"><a href="#型別多樣化" class="headerlink" title="型別多樣化"></a>型別多樣化</h2><br>
+              <h1 id="JAVA-抽象"><a href="#JAVA-抽象" class="headerlink" title="JAVA 抽象"></a>JAVA 抽象</h1><h2 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h2><br>
+抽象方法沒有方法主體，且必須加上abstract修飾子
 
-<p>只要符合類別間的繼承關係，在宣告參考變數時，子類別(位階低)物件實體可以升級成父類別(位階高) 型別表示</p>
-<p>範例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">Employee e1 = <span class="hljs-keyword">new</span> FullTimeEmployee();<br>Employee e2 = <span class="hljs-keyword">new</span> Manager();<br>Employee e3 = <span class="hljs-keyword">new</span> PartTimeEmployee();<br></code></pre></td></tr></table></figure>
 
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">myMethod</span><span class="hljs-params">()</span></span>;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>有抽象方法的類別，一定要宣告為抽象類別</p>
+</blockquote>
 <br>
 
-<h2 id="類別型別轉換-Cast"><a href="#類別型別轉換-Cast" class="headerlink" title="類別型別轉換(Cast)"></a>類別型別轉換(Cast)</h2><br>
+<h2 id="抽象類別"><a href="#抽象類別" class="headerlink" title="抽象類別"></a>抽象類別</h2><br>
 
-<p>父類別參考變數若是要轉型回子類別，則需要靠強迫轉型(Cast)，但是會在執行時期檢查是否能夠轉回 適當的子類別</p>
-<p>範例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">FullTimeEmployee f = (FullTimeEmployee)e1;<br>Manager m = (Manager)e1;<br></code></pre></td></tr></table></figure>
-
+<p>一個類別只要加上abstract修飾子(即使它裡面不含任何abstract方法)，它就無法產生實體</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>&#123;...&#125;<br></code></pre></td></tr></table></figure>
 <br>
 
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><br>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><br>
 
-<ul>
-<li>instanceof 運算子常被用來判斷父類別參考變數真正指向何種子類別的物件實體<ul>
-<li>語法:物件參考變數 instanceof 類別名稱</li>
-<li>說明:檢查左邊參考的物件是否可以轉型為右邊的類別型別，如果可以回傳true，否則為false</li>
-</ul>
-</li>
-</ul>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 抽象類別</span><br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pen</span> </span>&#123;<br>	<span class="hljs-keyword">protected</span> String brand;<br>	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">double</span> price;<br><br>	<span class="hljs-comment">// 抽象方法</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">()</span></span>;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setdata</span><span class="hljs-params">(String brand, <span class="hljs-keyword">double</span> price)</span> </span>&#123;<br>		<span class="hljs-keyword">this</span>.brand = brand;<br>		<span class="hljs-keyword">this</span>.price = price;<br>	&#125;<br>&#125;<br><br><span class="hljs-comment">// 自訂的筆類別(子類別)</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyPen</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pen</span> </span>&#123;<br>	<span class="hljs-comment">// 抽象方法實作</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">()</span> </span>&#123;<br>		System.out.print(<span class="hljs-string">&quot;牌子是： &quot;</span> + brand);<br>		System.out.println(<span class="hljs-string">&quot;價格為： &quot;</span> + price);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -287,18 +281,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/30/JAVA%20%E6%8A%BD%E8%B1%A1/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JAVA 抽象</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/27/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E7%B9%BC%E6%89%BF/">
-                        <span class="hidden-mobile">JAVA物件導向 - 繼承</span>
+                      <a href="/2021/09/28/JAVA%20%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E5%A4%9A%E5%9E%8B/">
+                        <span class="hidden-mobile">JAVA物件導向 - 多型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
