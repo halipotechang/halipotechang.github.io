@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>CSS 套用方式 - Li&#39;s Blog</title>
+  <title>JAVA 例外處理 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="CSS 套用方式">
+            <span class="h2" id="subtitle" title="JAVA 例外處理">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-08 18:03" pubdate>
-        2021年9月8日 晚上
+      <time datetime="2021-10-06 10:21" pubdate>
+        2021年10月6日 上午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      310 字
+      715 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      8
        分钟
     </span>
   
@@ -225,48 +225,89 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">CSS 套用方式</h1>
+            <h1 style="display: none">JAVA 例外處理</h1>
             
             <div class="markdown-body">
-              <h1 id="CSS-套用方式"><a href="#CSS-套用方式" class="headerlink" title="CSS 套用方式"></a>CSS 套用方式</h1><h2 id="行內套用-Inline"><a href="#行內套用-Inline" class="headerlink" title="行內套用 (Inline)"></a>行內套用 (Inline)</h2><br>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red;&quot;</span>&gt;</span>網頁設計<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>將style直接寫在HTML標籤內套用ＣＳＳ</p>
-</blockquote>
-<br>
-
-<h2 id="頁面套用-Embed"><a href="#頁面套用-Embed" class="headerlink" title="頁面套用 (Embed)"></a>頁面套用 (Embed)</h2><br>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">        <span class="hljs-selector-tag">h2</span> &#123;</span><br><span class="css">            <span class="hljs-attribute">color</span>:<span class="hljs-number">#090B4E</span>;</span><br><span class="css">        &#125;</span><br><span class="css">        <span class="hljs-selector-tag">p</span> &#123;</span><br><span class="css">            <span class="hljs-attribute">color</span>:<span class="hljs-number">#0f0</span>;</span><br><span class="css">        &#125;</span><br><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>將style寫在同頁面head區塊中套用ＣＳＳ</p>
-</blockquote>
-<br>
-
-<h2 id="外部連接套用-External-Link"><a href="#外部連接套用-External-Link" class="headerlink" title="外部連接套用 (External Link)"></a>外部連接套用 (External Link)</h2><br>
+              <h1 id="JAVA-例外處理"><a href="#JAVA-例外處理" class="headerlink" title="JAVA 例外處理"></a>JAVA 例外處理</h1><h2 id="Exception物件"><a href="#Exception物件" class="headerlink" title="Exception物件"></a>Exception物件</h2><br>
 
 <ul>
-<li>index.css<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;<span class="hljs-comment">/*頁面*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#339</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h2</span>&#123;<span class="hljs-comment">/*標題2*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-comment">/*背景文字色彩*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#660</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h3</span>&#123;<span class="hljs-comment">/*標題3*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#cc6</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">p</span>&#123;<span class="hljs-comment">/*段落*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#33f</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
-<li>index.html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;index.css&quot;</span>&gt;</span> <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>使用link標籤連結至外部ＣＳＳ檔案</p>
-</blockquote>
+<li>Java程式執行時，如果發生異常狀況，可借助例外處理<ul>
+<li>程式發生(產生)例外時，視為產生了一個Exception物件</li>
+</ul>
+</li>
+<li>例外處理可將一般正常處理程序與錯誤處理程序做到分開敘述，讓程式可讀性提高</li>
+</ul>
+<h3 id="分類"><a href="#分類" class="headerlink" title="分類"></a>分類</h3><ul>
+<li>執行時期的例外<ul>
+<li>這一類的例外，不一定要處理 .也稱為不必檢查的例外 (unchecked exceptions) </li>
+<li>例如 Runtime Exception 及其子類別</li>
+</ul>
+</li>
+<li>非執行時期的例外<ul>
+<li>這一類的例外，一定要處理 .也稱為必須檢查的例外 (checked exceptions)  </li>
+<li>例如 IOException、SQLException…等</li>
+</ul>
+</li>
+</ul>
+<h3 id="try"><a href="#try" class="headerlink" title="try"></a>try</h3><ul>
+<li>try { }:將正常處理程序的程式碼置於try程式區塊中</li>
+</ul>
+<h3 id="catch"><a href="#catch" class="headerlink" title="catch"></a>catch</h3><ul>
+<li>catch (MyException e) { }:當捕捉到例外物件時將錯誤處理程序的程式碼置於catch的程式區塊中</li>
+<li>類別位階高者需置於類別位階低者的後面</li>
+</ul>
+<h3 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h3><ul>
+<li>finally { }:將<code>一定要執行</code>的程式碼放在 finally的程式區塊裡</li>
+<li>無論發生什麼情況皆會執行的程式區塊，可用來釋放有限的資源，例如關閉(close)資料庫連<br>線、檔案讀取等</li>
+</ul>
+<p>範例</p>
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br>    正常處理程序程式碼...; <br>&#125; <span class="hljs-keyword">catch</span> (MyException e) &#123;<br>    錯誤處理程序程式碼...; <br>&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>    錯誤處理程序程式碼...; <br>&#125; <span class="hljs-keyword">finally</span> &#123;<br>    一定要執行的程式碼...; <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h3><ul>
+<li><p><code>方法</code>定義時，可使用 throws 關鍵字將可能發生的例外，丟出給呼叫此方法的程式去處理</p>
+</li>
+<li><p>對於<code>checked exceptions</code>，在呼叫有 throws 關鍵字的方法時，必須將該方法置於:</p>
+<ol>
+<li>將該方法置於 try { } 程式區塊中</li>
+<li>將該方法置於定義有 throws 關鍵字的方法中</li>
+</ol>
+</li>
+<li><p>子類別覆寫其父類別定義有 throws 的方法時，子類別所 throws 的 Exception 必須與父類別被覆寫方 法的 Exception <code>一樣</code>或是<code>更低階</code></p>
+<br></li>
+</ul>
+<h3 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h3><ul>
+<li><p>可使用 throw 關鍵字，將方法內的例<code>外手動丟出</code></p>
+<ul>
+<li>該物件必須是 java.lang.Throwable 類別的子類別</li>
+<li>throw 「一個可被丟出的物件」</li>
+</ul>
+</li>
+</ul>
+<p>範例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">double</span> <span class="hljs-title">method</span><span class="hljs-params">(<span class="hljs-keyword">double</span> i, <span class="hljs-keyword">double</span> j)</span> <span class="hljs-keyword">throws</span> ArithmeticException </span>&#123;<br>		<span class="hljs-keyword">double</span> result;<br>		<span class="hljs-keyword">if</span> (j == <span class="hljs-number">0</span>) &#123;<br>			<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ArithmeticException(<span class="hljs-string">&quot;喂! 除到0 ! 算數錯誤!&quot;</span>);<br>		&#125;<br>		result = i / j;<br>		<span class="hljs-keyword">return</span> result;<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h3 id="自訂例外"><a href="#自訂例外" class="headerlink" title="自訂例外"></a>自訂例外</h3><ul>
+<li><p>必須繼承 <code>Throwable</code> 或 <code>Exception</code> 或 <code>RuntimeException</code></p>
+</li>
+<li><p>通常會包含兩個建構子</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> 建構子名稱 () &#123; &#125;<br><br><span class="hljs-keyword">public</span> 建構子名稱 (String message) &#123;   <br>     <span class="hljs-keyword">super</span>(message); <br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>程式內一樣可利用 throw 關鍵字，將例外拋給負責處理此例外的 catch { } 區塊處理</p>
 </li>
 </ul>
 <br>
 
-<h2 id="匯入套用-Import"><a href="#匯入套用-Import" class="headerlink" title="匯入套用 (Import)"></a>匯入套用 (Import)</h2><br>
-
-<ul>
-<li>index.css<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;<span class="hljs-comment">/*頁面*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#339</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h2</span>&#123;<span class="hljs-comment">/*標題2*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-comment">/*背景文字色彩*/</span><br>	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#660</span>;<span class="hljs-comment">/*背景色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">h3</span>&#123;<span class="hljs-comment">/*標題3*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#cc6</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br><span class="hljs-selector-tag">p</span>&#123;<span class="hljs-comment">/*段落*/</span><br>	<span class="hljs-attribute">color</span>:<span class="hljs-number">#33f</span>;<span class="hljs-comment">/*文字色彩*/</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
-<li>index.html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">        <span class="hljs-keyword">@import</span> url(index.css);</span><br><span class="css">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<blockquote>
-<p>使用＠import語法連結外部ＣＳＳ檔案</p>
-</blockquote>
-</li>
+<h3 id="斷言-Assertion-機制"><a href="#斷言-Assertion-機制" class="headerlink" title="斷言(Assertion)機制"></a>斷言(Assertion)機制</h3><ul>
+<li> 用來維護程式使之更堅固(robust)，零錯誤</li>
+<li> Assertion通常用來檢查一些關鍵的值，避免這些值有錯誤時，讓程式無法繼續執行</li>
 </ul>
-
+<p>範例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getPrice</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-keyword">assert</span> <span class="hljs-keyword">this</span>.price &gt;= <span class="hljs-number">0.0</span> : <span class="hljs-string">&quot;書籍定價不可為負數&quot;</span>;<br>		<span class="hljs-keyword">return</span> price;<br>	&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -275,7 +316,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/CSS/">CSS</a>
+                      <a class="hover-with-bg" href="/categories/JAVA-SE/">JAVA SE</a>
                     
                   </div>
                 
@@ -283,9 +324,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
+                      <a class="hover-with-bg" href="/tags/JAVA/">JAVA</a>
                     
                   </div>
                 
@@ -302,18 +341,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/08/CSS%20BoxModel/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CSS BoxModel</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/">
-                        <span class="hidden-mobile">HTML 其他標籤</span>
+                      <a href="/2021/10/02/JAVA%20import/">
+                        <span class="hidden-mobile">JAVA import</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
