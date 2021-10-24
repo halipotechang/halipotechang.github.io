@@ -18,7 +18,7 @@
   <meta name="author" content="Li Chang">
   <meta name="keywords" content="">
   
-  <title>HTML 表格標籤 - Li&#39;s Blog</title>
+  <title>JDBC 介面 - Li&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="HTML 表格標籤">
+            <span class="h2" id="subtitle" title="JDBC 介面">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-07 20:00" pubdate>
-        2021年9月7日 晚上
+      <time datetime="2021-10-24 14:33" pubdate>
+        2021年10月24日 下午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      287 字
+      699 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      9
        分钟
     </span>
   
@@ -225,63 +225,126 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">HTML 表格標籤</h1>
+            <h1 style="display: none">JDBC 介面</h1>
             
             <div class="markdown-body">
-              <h1 id="HTML-表格標籤"><a href="#HTML-表格標籤" class="headerlink" title="HTML 表格標籤"></a>HTML 表格標籤</h1><br>
+              <h1 id="JDBC-介面"><a href="#JDBC-介面" class="headerlink" title="JDBC 介面"></a>JDBC 介面</h1><p><img src="/2021/10/24/JDBC%20%E4%BB%8B%E9%9D%A2/img2.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<h2 id="Connection-介面"><a href="#Connection-介面" class="headerlink" title="Connection 介面"></a>Connection 介面</h2><br>
 
 <ul>
-<li><p>&lt;table&gt;  主要呈現表格 範圍</p>
+<li><p>Connection代表資料庫一個連線通路，傳遞一系列的SQL指令給資料庫，並管理這些指令的認可與中止</p>
 </li>
-<li><p>&lt;tr&gt;  主要呈現表格中的 列</p>
-</li>
-<li><p>&lt;td&gt;  主要呈現表格中的 儲存格</p>
-</li>
-<li><p>&lt;th&gt;  主要呈現表格中的表格 標題</p>
+<li><p><code>Connection非常珍貴，使用完畢後務必在finally&#123; &#125;完成歸還的動作!</code></p>
 </li>
 </ul>
 <br>
 
-<p>範例：<br><br></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;001&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>序號<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>部門<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>職稱<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>001<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>joh<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>RD <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>專員<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>002<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span> <br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>mar<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>SR <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>主任<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>	<br>		<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>003<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Cathy<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>HR<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>004<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>Rome<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>PM<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>經理<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Connection con = DriverManager.getConnection(String url, String userID, String password);<br></code></pre></td></tr></table></figure>
+
+<p>資料庫位置 (URL)</p>
+<ul>
+<li><p>資料庫URL格式: jdbc:&lt;Subprotocol&gt;:&lt;Subname&gt;</p>
+<ul>
+<li>jdbc:mysql://localhost:3306/HR</li>
+</ul>
 <blockquote>
-<p>border=” “ 為表格邊框的大小</p>
+<p>MySQL 8 以後的驅動版本需在URL後接著?serverTimezone=Asia/Taipei</p>
 </blockquote>
-<br> 
-  
-<p>顯示：<br><br></p>
-<table>
-        <tr>
-            <th>序號</th>
-            <th>姓名</th>
-            <th>部門</th>
-            <th>職稱</th>
-        </tr>
-        <tr>
-            <td>001</td>
-            <td>joh</td> 
-            <td>RD </td>
-            <td>專員</td>
-        </tr>
-        <tr>
-            <td>002</td> 
-            <td>mar</td>
-            <td>SR </td>
-            <td>主任</td>
-        </tr>    
-        <tr>
-            <td>003</td>
-            <td>Cathy</td>
-            <td>HR</td>
-            <td>經理</td>
-        </tr>
-        <tr>
-            <td>004</td>
-            <td>Rome</td>
-            <td>PM</td>
-            <td>經理</td>
-        </tr>
-</table>
+</li>
+</ul>
+<p>關閉連線 – close()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">finally</span> &#123;<br>    <span class="hljs-keyword">if</span> (con != <span class="hljs-keyword">null</span>) &#123;<br>         <span class="hljs-keyword">try</span> &#123;<br>            con.close();<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;...&#125;<br>    &#125; <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>對con檢查不為null是為了避免連線尚未建立前就發生例外</p>
+</blockquote>
+<br>
+
+<h2 id="Statement-介面-靜態SQL指令"><a href="#Statement-介面-靜態SQL指令" class="headerlink" title="Statement 介面 (靜態SQL指令)"></a>Statement 介面 (靜態SQL指令)</h2><p>• 藉由Connection的方法:<code>Statement createStatement()</code>來建立與取得Statement物件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Statement stat = con.createStatement();<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>執行SQL指令的主要兩個方法</p>
+<ol>
+<li><code>ResultSet executeQuery(String sql)</code>:查詢資料庫，傳回ResultSet</li>
+<li><code>int executeUpdate(String sql)</code>:更新資料庫，傳回成功更新的筆數</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<h2 id="PreparedStatement-介面"><a href="#PreparedStatement-介面" class="headerlink" title="PreparedStatement 介面"></a>PreparedStatement 介面</h2><br>
+
+<ul>
+<li><p>PreparedStatement為Statement的子介面，因此也可以執行SQL指令</p>
+</li>
+<li><p>藉由Connection的方法: <code>PreparedStatement prepareStatement(String sql)</code></p>
+<p>  資料庫 可預先編譯SQL指令，執行效能較快，常用於需變數傳遞且重複執行的SQL指令</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">PreparedStatement pstmt = con.prepareStatement(SQL);<br></code></pre></td></tr></table></figure>
+
+<p>可對SQL指令裡，未知或是需動態改變的參數設定為 “ ? “，並在每次執行時，對 ? 置入 不同的值</p>
+<blockquote>
+<p>setType(int idx, Type value) <code> ? 的索引值是從1開始</code></p>
+</blockquote>
+<p>範例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">PrepareStatement pstmt = con.prepareStatement(SQL);<br>pstmt.setInt(<span class="hljs-number">1</span>, <span class="hljs-number">7015</span>);<br>pstmt.setString(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;MANAGER&quot;</span>);<br>pstmt.setDate(<span class="hljs-number">4</span>, java.sql.Date.valueOf(<span class="hljs-string">&quot;2016-01-01&quot;</span>));<br>pstmt.setDouble(<span class="hljs-number">5</span>, <span class="hljs-number">2500</span>);<br></code></pre></td></tr></table></figure>
+<br>
+
+<ul>
+<li><p>執行SQL指令的主要兩個方法</p>
+<ol>
+<li><code>ResultSet executeQuery(String sql)</code>:查詢資料庫，傳回ResultSet</li>
+<li><code>int executeUpdate(String sql)</code>:更新資料庫，傳回成功更新的筆數</li>
+</ol>
+</li>
+</ul>
+<br>
+
+<h2 id="CallableStatement-介面-預存程序"><a href="#CallableStatement-介面-預存程序" class="headerlink" title="CallableStatement 介面 (預存程序)"></a>CallableStatement 介面 (預存程序)</h2><ul>
+<li><p>CallableStatement prepareCall(String sql):</p>
+<p>  使用預存程序(stored procedure)，<code>預存程序已事先內建在資料庫中</code>，通常比預先編譯的效能佳</p>
+</li>
+<li><p><code>程式設計師只需知道預存程序的名稱與輸入輸出的參數，無需暸解SQL指令</code></p>
+</li>
+<li><p><code>不同的資料庫有不同的預存程序語法;對三階開發人員來說，意義不大</code></p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">CallableStatement cstmt = <span class="hljs-keyword">null</span><br>cstmt = con.prepareCall(<span class="hljs-string">&quot;&#123;call get_sal_avg(?,?)&#125;&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="ResultSet介面"><a href="#ResultSet介面" class="headerlink" title="ResultSet介面"></a>ResultSet介面</h2><ul>
+<li><p>當執行executeQuery()方法，該方法即傳回從資料庫查詢的結果資料列</p>
+</li>
+<li><p><code>移動資料列游標的相關方法</code></p>
+<ul>
+<li>next()、previous()、first()、last()、beforeFirst()、afterLast()</li>
+<li>next()傳回boolean值<blockquote>
+<p>部份移動游標方法為JDBC 2.0時新增，需在建立Statement時設定</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><code>取出查詢結果資料欄的方法</code></p>
+<ol>
+<li>type getType(int columnIndex)</li>
+<li>type getType(String columnName)<blockquote>
+<p><code>index從1開始</code>，一般來說使用index較有效率</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p><code>其它方法</code></p>
+<ul>
+<li>int getRow():取得目前的列編號</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2021/10/24/JDBC%20%E4%BB%8B%E9%9D%A2/img1.png" srcset="/img/loading.gif" lazyload alt=" "></p>
+<p>範例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span> (rs.next()) &#123;<br>	String ename = rs.getString(<span class="hljs-string">&quot;ENAME&quot;</span>);<br>	<span class="hljs-keyword">double</span> sal = rs.getDouble(<span class="hljs-string">&quot;SAL&quot;</span>);<br>	String job = rs.getString(<span class="hljs-string">&quot;JOB&quot;</span>);<br>    String dname = rs.getString(<span class="hljs-string">&quot;DNAME&quot;</span>);<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -291,7 +354,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/HTML/">HTML</a>
+                      <a class="hover-with-bg" href="/categories/JAVA-EE/">JAVA EE</a>
                     
                   </div>
                 
@@ -299,9 +362,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
-                    
-                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
+                      <a class="hover-with-bg" href="/tags/JDBC/">JDBC</a>
                     
                   </div>
                 
@@ -318,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">HTML 圖片、多媒體標籤</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/">
-                        <span class="hidden-mobile">HTML 文字標籤</span>
+                      <a href="/2021/10/24/JDBC%20Driver/">
+                        <span class="hidden-mobile">JDBC Driver</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

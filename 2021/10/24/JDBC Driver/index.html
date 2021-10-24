@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      240 字
+      395 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      5
        分钟
     </span>
   
@@ -264,6 +264,19 @@
 <li>Type 4 Driver  Native Protocol Driver :  此類型driver通常由資料庫廠商直接提供，會將JDBC呼叫轉換為與資料庫特定的網路協定  driver可以完全用Java技術實現，因此達到<code>跨平台</code>功能  <code>效能也有不錯表現</code>， 為<code>業界最常見的driver類型</code></li>
 </ul>
 <p><img src="/2021/10/24/JDBC%20Driver/img4.png" srcset="/img/loading.gif" lazyload alt=" ">    </p>
+<br>
+
+<h1 id="JDBC-Driver-註冊"><a href="#JDBC-Driver-註冊" class="headerlink" title="JDBC Driver 註冊"></a>JDBC Driver 註冊</h1><ul>
+<li><p>Class Loader方式</p>
+<p>  採用Class Loader方式產生Driver實體，並註冊到DriverManager的驅動程式註冊表單中</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">Class.forName(“com.mysql.jdbc.Driver”);<br>Class.forName(“com.mysql.cj.jdbc.Driver”);<span class="hljs-comment">//(MySQL 8以後的驅動名稱)</span><br>Class.forName(“oracle.jdbc.driver.OracleDriver”);<br>Class.forName(“com.microsoft.sqlserver.jdbc.SQLServerDriver”);<br>Class.forName(“com.ibm.db2.jdbc.app.DB2Driver”);<br></code></pre></td></tr></table></figure></li>
+<li><p>register方式</p>
+<p>  採用register方式產生Driver實體，並將自己註冊到Driver Manager驅動程式註冊表單中</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">DriverManager.registerDriver(<span class="hljs-keyword">new</span> com.mysql.cj.jdbc.Driver());<br>DriverManager.registerDriver(<span class="hljs-keyword">new</span> oracle.jdbc.driver.OracleDriver());<br></code></pre></td></tr></table></figure></li>
+<li><p>System Property方式</p>
+<p>  採用System Property方式，可以包含數個drivers，彼此之間以冒號(:)隔開</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">System.setProperty(“jdbc.drivers”, “com.mysql.jdbc.Driver”);<br></code></pre></td></tr></table></figure></li>
+</ul>
 
             </div>
             <hr>
@@ -297,6 +310,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/10/24/JDBC%20%E4%BB%8B%E9%9D%A2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JDBC 介面</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

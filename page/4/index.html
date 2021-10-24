@@ -182,6 +182,76 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/09/12/CSS%20%E6%96%87%E5%AD%97%E7%BE%8E%E5%8C%96/" target="_self">
+          CSS 文字美化
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/12/CSS%20%E6%96%87%E5%AD%97%E7%BE%8E%E5%8C%96/" target="_self">
+          
+          
+            
+          
+          CSS 文字美化
+
+字體美化
+
+
+font-family 用來設定字體類別
+1p &#123;font-family: arial;&#125;
+font-size 用來設定字體大小
+1p &#123;font-size: 9px;&#125;
+font-weight 用來設定字體厚度
+
+font-style 用來設定字體是否為斜體
+
+
+
+參數： italic、oblique
+
+
+font-var
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-12 19:37" pubdate>
+              2021-09-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/CSS/">CSS</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/CSS/">CSS</a>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/">前端開發</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/09/11/JAVA%20%E8%B3%87%E6%96%99%E5%9E%8B%E5%88%A5/" target="_self">
           JAVA 資料型別
         </a>
@@ -257,6 +327,69 @@ boolean
               <a href="/tags/JAVA/">JAVA</a>
             
               <a href="/tags/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/">物件導向</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Group by子句
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
+          
+          
+            
+          
+          MySQL Group by子句用途：
+
+
+用於資料分組
+
+
+
+語法：
+
+12345678910select      .. from      ..      [where ..] group by     欄位名1|欄位序1|運算式1,     ..,     欄位名N|欄位序N|運算式N,     [with rollup]
+
+ with rollup: 在後面加上一筆總計或小計(多個分組依
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-10 20:32" pubdate>
+              2021-09-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/MySQL/">MySQL</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MySQL/">MySQL</a>
+            
+              <a href="/tags/SQL/">SQL</a>
             
           </div>
         
@@ -404,29 +537,36 @@ Join (多重資料連結)
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Group by子句
+        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
+          MySQL Order by子句
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/" target="_self">
+        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
           
           
             
           
-          MySQL Group by子句用途：
+          MySQL Order by子句用途：
 
 
-用於資料分組
+用於資料排序
 
 
 
 語法：
 
-12345678910select      .. from      ..      [where ..] group by     欄位名1|欄位序1|運算式1,     ..,     欄位名N|欄位序N|運算式N,     [with rollup]
+1234567select     .. from     ..order by    欄位名1|別名1|欄位序1|運算式1 [asc|desc], ..,    欄位名N|別名N|欄位序N|運算式N [asc|desc];
 
- with rollup: 在後面加上一筆總計或小計(多個分組依
+asc : 遞增
+
+
+desc: 遞減
+
+
+
+
         </a>
       </p>
 
@@ -493,76 +633,6 @@ Join (多重資料連結)
 
 
 顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-10 20:32" pubdate>
-              2021-09-10
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/MySQL/">MySQL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/MySQL/">MySQL</a>
-            
-              <a href="/tags/SQL/">SQL</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          MySQL Order by子句
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/" target="_self">
-          
-          
-            
-          
-          MySQL Order by子句用途：
-
-
-用於資料排序
-
-
-
-語法：
-
-1234567select     .. from     ..order by    欄位名1|別名1|欄位序1|運算式1 [asc|desc], ..,    欄位名N|別名N|欄位序N|運算式N [asc|desc];
-
-asc : 遞增
-
-
-desc: 遞減
-
-
 
 
         </a>
@@ -861,71 +931,6 @@ TEXT
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2021-09-09 19:10" pubdate>
-              2021-09-09
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/SQL/">SQL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/SQL/">SQL</a>
-            
-              <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/09/%E8%B3%87%E6%96%99%E5%BA%AB%E6%A6%82%E8%AB%96/" target="_self">
-          資料庫概論
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/09/%E8%B3%87%E6%96%99%E5%BA%AB%E6%A6%82%E8%AB%96/" target="_self">
-          
-          
-            
-          
-          資料庫概論資料庫演進資料庫的演進：人工作業 –&gt; 循序儲存 –&gt; 檔案系統 –&gt; 資料庫系統
-
-人工作業 : 紙本
-循序儲存 : 磁帶
-檔案系統 : 檔案
-資料庫系統 : 硬碟(配合BDMS做管理)
-
-
-
-DBSM 類型
-階層式(Hierarchical model) 
-網狀式(Network model)
-關聯式(Relational model) 
-文件式(Document 
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-09 10:54" pubdate>
               2021-09-09
             </time>
           </div>

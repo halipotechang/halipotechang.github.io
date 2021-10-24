@@ -4,11 +4,36 @@
   
   
   <entry>
+    <title>JDBC 介面</title>
+    <link href="/2021/10/24/JDBC%20%E4%BB%8B%E9%9D%A2/"/>
+    <url>/2021/10/24/JDBC%20%E4%BB%8B%E9%9D%A2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="JDBC-介面"><a href="#JDBC-介面" class="headerlink" title="JDBC 介面"></a>JDBC 介面</h1><p><img src="/2021/10/24/JDBC%20%E4%BB%8B%E9%9D%A2/img2.png" alt=" "></p><h2 id="Connection-介面"><a href="#Connection-介面" class="headerlink" title="Connection 介面"></a>Connection 介面</h2><br><ul><li><p>Connection代表資料庫一個連線通路，傳遞一系列的SQL指令給資料庫，並管理這些指令的認可與中止</p></li><li><p><code>Connection非常珍貴，使用完畢後務必在finally&#123; &#125;完成歸還的動作!</code></p></li></ul><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Connection con = DriverManager.getConnection(String url, String userID, String password);<br></code></pre></td></tr></table></figure><p>資料庫位置 (URL)</p><ul><li><p>資料庫URL格式: jdbc:&lt;Subprotocol&gt;:&lt;Subname&gt;</p><ul><li>jdbc:mysql://localhost:3306/HR</li></ul><blockquote><p>MySQL 8 以後的驅動版本需在URL後接著?serverTimezone=Asia/Taipei</p></blockquote></li></ul><p>關閉連線 – close()</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">finally</span> &#123;<br>    <span class="hljs-keyword">if</span> (con != <span class="hljs-keyword">null</span>) &#123;<br>         <span class="hljs-keyword">try</span> &#123;<br>            con.close();<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;...&#125;<br>    &#125; <br>&#125;<br></code></pre></td></tr></table></figure><blockquote><p>對con檢查不為null是為了避免連線尚未建立前就發生例外</p></blockquote><br><h2 id="Statement-介面-靜態SQL指令"><a href="#Statement-介面-靜態SQL指令" class="headerlink" title="Statement 介面 (靜態SQL指令)"></a>Statement 介面 (靜態SQL指令)</h2><p>• 藉由Connection的方法:<code>Statement createStatement()</code>來建立與取得Statement物件</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">Statement stat = con.createStatement();<br></code></pre></td></tr></table></figure><ul><li><p>執行SQL指令的主要兩個方法</p><ol><li><code>ResultSet executeQuery(String sql)</code>:查詢資料庫，傳回ResultSet</li><li><code>int executeUpdate(String sql)</code>:更新資料庫，傳回成功更新的筆數</li></ol></li></ul><br><h2 id="PreparedStatement-介面"><a href="#PreparedStatement-介面" class="headerlink" title="PreparedStatement 介面"></a>PreparedStatement 介面</h2><br><ul><li><p>PreparedStatement為Statement的子介面，因此也可以執行SQL指令</p></li><li><p>藉由Connection的方法: <code>PreparedStatement prepareStatement(String sql)</code></p><p>  資料庫 可預先編譯SQL指令，執行效能較快，常用於需變數傳遞且重複執行的SQL指令</p></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">PreparedStatement pstmt = con.prepareStatement(SQL);<br></code></pre></td></tr></table></figure><p>可對SQL指令裡，未知或是需動態改變的參數設定為 “ ? “，並在每次執行時，對 ? 置入 不同的值</p><blockquote><p>setType(int idx, Type value) <code> ? 的索引值是從1開始</code></p></blockquote><p>範例：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">PrepareStatement pstmt = con.prepareStatement(SQL);<br>pstmt.setInt(<span class="hljs-number">1</span>, <span class="hljs-number">7015</span>);<br>pstmt.setString(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;MANAGER&quot;</span>);<br>pstmt.setDate(<span class="hljs-number">4</span>, java.sql.Date.valueOf(<span class="hljs-string">&quot;2016-01-01&quot;</span>));<br>pstmt.setDouble(<span class="hljs-number">5</span>, <span class="hljs-number">2500</span>);<br></code></pre></td></tr></table></figure><br><ul><li><p>執行SQL指令的主要兩個方法</p><ol><li><code>ResultSet executeQuery(String sql)</code>:查詢資料庫，傳回ResultSet</li><li><code>int executeUpdate(String sql)</code>:更新資料庫，傳回成功更新的筆數</li></ol></li></ul><br><h2 id="CallableStatement-介面-預存程序"><a href="#CallableStatement-介面-預存程序" class="headerlink" title="CallableStatement 介面 (預存程序)"></a>CallableStatement 介面 (預存程序)</h2><ul><li><p>CallableStatement prepareCall(String sql):</p><p>  使用預存程序(stored procedure)，<code>預存程序已事先內建在資料庫中</code>，通常比預先編譯的效能佳</p></li><li><p><code>程式設計師只需知道預存程序的名稱與輸入輸出的參數，無需暸解SQL指令</code></p></li><li><p><code>不同的資料庫有不同的預存程序語法;對三階開發人員來說，意義不大</code></p></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">CallableStatement cstmt = <span class="hljs-keyword">null</span><br>cstmt = con.prepareCall(<span class="hljs-string">&quot;&#123;call get_sal_avg(?,?)&#125;&quot;</span>);<br></code></pre></td></tr></table></figure><br><h2 id="ResultSet介面"><a href="#ResultSet介面" class="headerlink" title="ResultSet介面"></a>ResultSet介面</h2><ul><li><p>當執行executeQuery()方法，該方法即傳回從資料庫查詢的結果資料列</p></li><li><p><code>移動資料列游標的相關方法</code></p><ul><li>next()、previous()、first()、last()、beforeFirst()、afterLast()</li><li>next()傳回boolean值<blockquote><p>部份移動游標方法為JDBC 2.0時新增，需在建立Statement時設定</p></blockquote></li></ul></li><li><p><code>取出查詢結果資料欄的方法</code></p><ol><li>type getType(int columnIndex)</li><li>type getType(String columnName)<blockquote><p><code>index從1開始</code>，一般來說使用index較有效率</p></blockquote></li></ol></li><li><p><code>其它方法</code></p><ul><li>int getRow():取得目前的列編號</li></ul></li></ul><p><img src="/2021/10/24/JDBC%20%E4%BB%8B%E9%9D%A2/img1.png" alt=" "></p><p>範例：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">while</span> (rs.next()) &#123;<br>String ename = rs.getString(<span class="hljs-string">&quot;ENAME&quot;</span>);<br><span class="hljs-keyword">double</span> sal = rs.getDouble(<span class="hljs-string">&quot;SAL&quot;</span>);<br>String job = rs.getString(<span class="hljs-string">&quot;JOB&quot;</span>);<br>    String dname = rs.getString(<span class="hljs-string">&quot;DNAME&quot;</span>);<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>JAVA EE</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JDBC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JDBC Driver</title>
     <link href="/2021/10/24/JDBC%20Driver/"/>
     <url>/2021/10/24/JDBC%20Driver/</url>
     
-    <content type="html"><![CDATA[<h1 id="JDBC-Driver"><a href="#JDBC-Driver" class="headerlink" title="JDBC Driver"></a>JDBC Driver</h1><ul><li><p>Type 1 Driver</p><p>  JDBC-ODBC Bridge Driver:</p><p>  將JDBC的運作轉成ODBC的機制來連接資料庫，存<code>取速度與功能均有受限</code>，<code>彈性不足</code></p><blockquote><p>JDK 8已將ODBC相關類別庫移除</p></blockquote></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img1.png" alt=" "></p><br><ul><li><p>Type 2 Driver</p><p>  Native API Driver :</p><p>  此類型driver會以原生(Native)方式呼叫資料庫提供的原生程式庫(通常是C/C++實作)</p><p>  因為採用原生方式，故存取速度較Type1快，但<code>沒有達到跨平台</code>的目標。</p></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img2.png" alt=" "></p><br><ul><li><p>Type 3 Driver</p><p>  JDBC-Net Driver :</p><p>  此類型driver會將JDBC呼叫轉換為特定的網路協定(Protocol)</p><p>  由中介伺服器或元件<br>  跟資料庫進行操作，<code>速度會較慢</code></p></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img3.png" alt=" ">    </p><br><ul><li>Type 4 Driver  Native Protocol Driver :  此類型driver通常由資料庫廠商直接提供，會將JDBC呼叫轉換為與資料庫特定的網路協定  driver可以完全用Java技術實現，因此達到<code>跨平台</code>功能  <code>效能也有不錯表現</code>， 為<code>業界最常見的driver類型</code></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img4.png" alt=" ">    </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="JDBC-Driver"><a href="#JDBC-Driver" class="headerlink" title="JDBC Driver"></a>JDBC Driver</h1><ul><li><p>Type 1 Driver</p><p>  JDBC-ODBC Bridge Driver:</p><p>  將JDBC的運作轉成ODBC的機制來連接資料庫，存<code>取速度與功能均有受限</code>，<code>彈性不足</code></p><blockquote><p>JDK 8已將ODBC相關類別庫移除</p></blockquote></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img1.png" alt=" "></p><br><ul><li><p>Type 2 Driver</p><p>  Native API Driver :</p><p>  此類型driver會以原生(Native)方式呼叫資料庫提供的原生程式庫(通常是C/C++實作)</p><p>  因為採用原生方式，故存取速度較Type1快，但<code>沒有達到跨平台</code>的目標。</p></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img2.png" alt=" "></p><br><ul><li><p>Type 3 Driver</p><p>  JDBC-Net Driver :</p><p>  此類型driver會將JDBC呼叫轉換為特定的網路協定(Protocol)</p><p>  由中介伺服器或元件<br>  跟資料庫進行操作，<code>速度會較慢</code></p></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img3.png" alt=" ">    </p><br><ul><li>Type 4 Driver  Native Protocol Driver :  此類型driver通常由資料庫廠商直接提供，會將JDBC呼叫轉換為與資料庫特定的網路協定  driver可以完全用Java技術實現，因此達到<code>跨平台</code>功能  <code>效能也有不錯表現</code>， 為<code>業界最常見的driver類型</code></li></ul><p><img src="/2021/10/24/JDBC%20Driver/img4.png" alt=" ">    </p><br><h1 id="JDBC-Driver-註冊"><a href="#JDBC-Driver-註冊" class="headerlink" title="JDBC Driver 註冊"></a>JDBC Driver 註冊</h1><ul><li><p>Class Loader方式</p><p>  採用Class Loader方式產生Driver實體，並註冊到DriverManager的驅動程式註冊表單中</p>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">Class.forName(“com.mysql.jdbc.Driver”);<br>Class.forName(“com.mysql.cj.jdbc.Driver”);<span class="hljs-comment">//(MySQL 8以後的驅動名稱)</span><br>Class.forName(“oracle.jdbc.driver.OracleDriver”);<br>Class.forName(“com.microsoft.sqlserver.jdbc.SQLServerDriver”);<br>Class.forName(“com.ibm.db2.jdbc.app.DB2Driver”);<br></code></pre></td></tr></table></figure></li><li><p>register方式</p><p>  採用register方式產生Driver實體，並將自己註冊到Driver Manager驅動程式註冊表單中</p>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">DriverManager.registerDriver(<span class="hljs-keyword">new</span> com.mysql.cj.jdbc.Driver());<br>DriverManager.registerDriver(<span class="hljs-keyword">new</span> oracle.jdbc.driver.OracleDriver());<br></code></pre></td></tr></table></figure></li><li><p>System Property方式</p><p>  採用System Property方式，可以包含數個drivers，彼此之間以冒號(:)隔開</p>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">System.setProperty(“jdbc.drivers”, “com.mysql.jdbc.Driver”);<br></code></pre></td></tr></table></figure></li></ul>]]></content>
     
     
     <categories>
@@ -747,9 +772,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -777,6 +802,33 @@
       <tag>JAVA</tag>
       
       <tag>物件導向</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL Group by子句</title>
+    <link href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="MySQL-Group-by子句"><a href="#MySQL-Group-by子句" class="headerlink" title="MySQL Group by子句"></a>MySQL Group by子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於資料分組</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     .. <br><span class="hljs-keyword">from</span> <br>     .. <br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span><br>     欄位名<span class="hljs-number">1</span><span class="hljs-operator">|</span>欄位序<span class="hljs-number">1</span><span class="hljs-operator">|</span>運算式<span class="hljs-number">1</span>,<br>     ..,<br>     欄位名N<span class="hljs-operator">|</span>欄位序N<span class="hljs-operator">|</span>運算式N,<br>     [<span class="hljs-keyword">with</span> <span class="hljs-keyword">rollup</span>]<br></code></pre></td></tr></table></figure><blockquote><p> with rollup: 在後面加上一筆總計或小計(多個分組依據時)的資料</p></blockquote><br>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+      <tag>SQL</tag>
       
     </tags>
     
@@ -839,11 +891,11 @@
   
   
   <entry>
-    <title>MySQL Group by子句</title>
-    <link href="/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20Group%20by%E5%AD%90%E5%8F%A5/</url>
+    <title>MySQL Order by子句</title>
+    <link href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/"/>
+    <url>/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/</url>
     
-    <content type="html"><![CDATA[<h1 id="MySQL-Group-by子句"><a href="#MySQL-Group-by子句" class="headerlink" title="MySQL Group by子句"></a>MySQL Group by子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於資料分組</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     .. <br><span class="hljs-keyword">from</span> <br>     .. <br>     [<span class="hljs-keyword">where</span> ..] <br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span><br>     欄位名<span class="hljs-number">1</span><span class="hljs-operator">|</span>欄位序<span class="hljs-number">1</span><span class="hljs-operator">|</span>運算式<span class="hljs-number">1</span>,<br>     ..,<br>     欄位名N<span class="hljs-operator">|</span>欄位序N<span class="hljs-operator">|</span>運算式N,<br>     [<span class="hljs-keyword">with</span> <span class="hljs-keyword">rollup</span>]<br></code></pre></td></tr></table></figure><blockquote><p> with rollup: 在後面加上一筆總計或小計(多個分組依據時)的資料</p></blockquote><br>]]></content>
+    <content type="html"><![CDATA[<h1 id="MySQL-Order-by子句"><a href="#MySQL-Order-by子句" class="headerlink" title="MySQL Order by子句"></a>MySQL Order by子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於資料排序</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     .. <br><span class="hljs-keyword">from</span><br>     ..<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span><br>    欄位名<span class="hljs-number">1</span><span class="hljs-operator">|</span>別名<span class="hljs-number">1</span><span class="hljs-operator">|</span>欄位序<span class="hljs-number">1</span><span class="hljs-operator">|</span>運算式<span class="hljs-number">1</span> [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>], ..,<br>    欄位名N<span class="hljs-operator">|</span>別名N<span class="hljs-operator">|</span>欄位序N<span class="hljs-operator">|</span>運算式N [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>];<br></code></pre></td></tr></table></figure><blockquote><p>asc : 遞增</p></blockquote><blockquote><p>desc: 遞減</p></blockquote><br>]]></content>
     
     
     <categories>
@@ -871,33 +923,6 @@
     <url>/2021/09/10/MySQL%20Limit%E5%AD%90%E5%8F%A5/</url>
     
     <content type="html"><![CDATA[<h1 id="MySQL-MySQL-Limit子句"><a href="#MySQL-MySQL-Limit子句" class="headerlink" title="MySQL MySQL Limit子句"></a>MySQL MySQL Limit子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>限制資料筆數</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <br>     .. <br><span class="hljs-keyword">from</span> <br>     ..<br>limit<br>     [略過筆數,] 顯示筆數<br></code></pre></td></tr></table></figure><blockquote><p>略過筆數(Offset): (從最前面開始算) 欲跳過的資料筆數，需&gt;=0，預設為0 </p></blockquote><blockquote><p>顯示筆數(Count): 欲顯示的資料筆數，需&gt;=0</p></blockquote>]]></content>
-    
-    
-    <categories>
-      
-      <category>MySQL</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>MySQL</tag>
-      
-      <tag>SQL</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>MySQL Order by子句</title>
-    <link href="/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/"/>
-    <url>/2021/09/10/MySQL%20Order%20by%E5%AD%90%E5%8F%A5/</url>
-    
-    <content type="html"><![CDATA[<h1 id="MySQL-Order-by子句"><a href="#MySQL-Order-by子句" class="headerlink" title="MySQL Order by子句"></a>MySQL Order by子句</h1><h2 id="用途："><a href="#用途：" class="headerlink" title="用途："></a>用途：</h2><br><blockquote><p>用於資料排序</p></blockquote><br><h2 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h2><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>     .. <br><span class="hljs-keyword">from</span><br>     ..<br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span><br>    欄位名<span class="hljs-number">1</span><span class="hljs-operator">|</span>別名<span class="hljs-number">1</span><span class="hljs-operator">|</span>欄位序<span class="hljs-number">1</span><span class="hljs-operator">|</span>運算式<span class="hljs-number">1</span> [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>], ..,<br>    欄位名N<span class="hljs-operator">|</span>別名N<span class="hljs-operator">|</span>欄位序N<span class="hljs-operator">|</span>運算式N [<span class="hljs-keyword">asc</span><span class="hljs-operator">|</span><span class="hljs-keyword">desc</span>];<br></code></pre></td></tr></table></figure><blockquote><p>asc : 遞增</p></blockquote><blockquote><p>desc: 遞減</p></blockquote><br>]]></content>
     
     
     <categories>
@@ -1044,9 +1069,9 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
+      
+      <tag>前端開發</tag>
       
     </tags>
     
@@ -1071,61 +1096,7 @@
     
     <tags>
       
-      <tag>前端開發</tag>
-      
       <tag>CSS</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 文字標籤</title>
-    <link href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="HTML-文字標籤"><a href="#HTML-文字標籤" class="headerlink" title="HTML 文字標籤"></a>HTML 文字標籤</h1><h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字標題，數字越大表示呈現的標題越大 </p></blockquote><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字段落</p></blockquote><h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><br><ul><li>無序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul><br><ul><li>有序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>以清單方式呈現，<strong>&lt;li&gt;</strong> 為清單項目</p></blockquote></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>HTML</tag>
-      
-      <tag>前端開發</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>HTML 其他標籤</title>
-    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
-    
-    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>HTML</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>HTML</tag>
       
       <tag>前端開發</tag>
       
@@ -1152,9 +1123,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -1163,11 +1134,11 @@
   
   
   <entry>
-    <title>HTML 圖片、多媒體標籤</title>
-    <link href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/"/>
-    <url>/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/</url>
+    <title>HTML 其他標籤</title>
+    <link href="/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E5%85%B6%E4%BB%96%E6%A8%99%E7%B1%A4/</url>
     
-    <content type="html"><![CDATA[<h1 id="HTML-圖片、多媒體標籤"><a href="#HTML-圖片、多媒體標籤" class="headerlink" title="HTML 圖片、多媒體標籤"></a>HTML 圖片、多媒體標籤</h1><h2 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h2><br><ul><li>&lt;img&gt; 顯示圖片標籤</li></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>src=””  為圖片來源 </p></blockquote><blockquote><p>alt=””   為替代文字</p></blockquote><h2 id="多媒體"><a href="#多媒體" class="headerlink" title="多媒體"></a>多媒體</h2><br><ul><li><p>&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;object&gt; 多媒體資料以object方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>data=”” 外部資源url</p></blockquote></li></ul><br><ul><li><p>&lt;video&gt; 將影片資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;audio&gt; 將聲音資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="區塊標簽"><a href="#區塊標簽" class="headerlink" title="區塊標簽"></a>區塊標簽</h1><br><ul><li><p>&lt;div&gt; 頁面的區域、範圍</p></li><li><p>&lt;section&gt; 為HTML5新標籤，頁面中的區塊範圍</p></li></ul><h1 id="其他標簽"><a href="#其他標簽" class="headerlink" title="其他標簽"></a>其他標簽</h1><br><ul><li><p>&lt;hr&gt; 水平線</p></li><li><p>&lt;br&gt; 換行</p></li><li><p>&lt;span&gt; 文字行中的子項目</p></li><li><p>&lt;iframe&gt; 內置框架，可以連結其他頁面</p></li></ul>]]></content>
     
     
     <categories>
@@ -1179,9 +1150,9 @@
     
     <tags>
       
-      <tag>HTML</tag>
-      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -1206,9 +1177,36 @@
     
     <tags>
       
+      <tag>前端開發</tag>
+      
       <tag>HTML</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 圖片、多媒體標籤</title>
+    <link href="/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/HTML%20%E5%9C%96%E7%89%87%E3%80%81%E5%A4%9A%E5%AA%92%E9%AB%94%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-圖片、多媒體標籤"><a href="#HTML-圖片、多媒體標籤" class="headerlink" title="HTML 圖片、多媒體標籤"></a>HTML 圖片、多媒體標籤</h1><h2 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h2><br><ul><li>&lt;img&gt; 顯示圖片標籤</li></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>src=””  為圖片來源 </p></blockquote><blockquote><p>alt=””   為替代文字</p></blockquote><h2 id="多媒體"><a href="#多媒體" class="headerlink" title="多媒體"></a>多媒體</h2><br><ul><li><p>&lt;embed&gt; 將影音多媒體資料以嵌入方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">embed</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;object&gt; 多媒體資料以object方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>data=”” 外部資源url</p></blockquote></li></ul><br><ul><li><p>&lt;video&gt; 將影片資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br></code></pre></td></tr></table></figure><br></li><li><p>&lt;audio&gt; 將聲音資料以連結方式置於頁面。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">audio</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">audio</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
@@ -1233,9 +1231,36 @@
     
     <tags>
       
+      <tag>前端開發</tag>
+      
       <tag>HTML</tag>
       
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>HTML 文字標籤</title>
+    <link href="/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/"/>
+    <url>/2021/09/07/%20HTML%20%E6%96%87%E5%AD%97%E6%A8%99%E7%B1%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="HTML-文字標籤"><a href="#HTML-文字標籤" class="headerlink" title="HTML 文字標籤"></a>HTML 文字標籤</h1><h2 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字標題，數字越大表示呈現的標題越大 </p></blockquote><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>呈現文字段落</p></blockquote><h2 id="清單"><a href="#清單" class="headerlink" title="清單"></a>清單</h2><br><ul><li>無序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul><br><ul><li>有序清單<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目一<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>項目二<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure><blockquote><p>以清單方式呈現，<strong>&lt;li&gt;</strong> 為清單項目</p></blockquote></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
       <tag>前端開發</tag>
+      
+      <tag>HTML</tag>
       
     </tags>
     
